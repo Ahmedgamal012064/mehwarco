@@ -7,7 +7,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>test</title>
+    <title>test2</title>
 
     <link rel="shortcut icon" href="assets/dist/images/favicon.png">
     <!-- Bootstrap core CSS -->
