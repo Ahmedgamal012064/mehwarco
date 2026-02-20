@@ -7,7 +7,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>mehwarco</title>
+    <title>mehwarc</title>
 
     <link rel="shortcut icon" href="assets/dist/images/favicon.png">
     <!-- Bootstrap core CSS -->
