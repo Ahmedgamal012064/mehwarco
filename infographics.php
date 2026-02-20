@@ -111,6 +111,30 @@
             background-color: #D2AA5A;
             color: #fff;
         }
+        /* Header styling for white pages */
+        #mainNav {
+            background-color: #0b4932 !important;
+            padding-top: 10px;
+            padding-bottom: 10px;
+        }
+        #mainNav .navbar-nav .nav-link {
+            color: #fff !important;
+            font-size: 14px;
+        }
+        #mainNav .navbar-nav .nav-link:hover {
+            color: #D2AA5A !important;
+        }
+        #mainNav .dropdown-menu {
+            background-color: #fff;
+        }
+        #mainNav .dropdown-item {
+            color: #0b4932;
+            font-size: 14px;
+        }
+        #mainNav .dropdown-item:hover {
+            background-color: #D2AA5A;
+            color: #fff;
+        }
         /* Modal styles */
         .modal-infographic .modal-dialog {
             max-width: 90%;
