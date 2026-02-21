@@ -622,51 +622,61 @@
         </section>
 
         <!-- Blog -->
-
-
-
-     
-
-
-
-
-       <?php
-$stmt = $db->prepare('SELECT post_id, post_title, post_image_name, content, created_by, created_at FROM posts ORDER BY created_at DESC');
-$stmt->execute();
-$rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
-
-if (count($rows) > 0) {
-    foreach ($rows as $row) {
-        $post_id = $row["post_id"];
-        $post_title = $row["post_title"];
-        $post_image_name = $row["post_image_name"];
-        $content = $row["content"];
-        $created_by = $row["created_by"];
-        $created_at = date("l, j F Y", strtotime($row["created_at"])); // Format date
-
-        echo '<section class="page-section" id="blog">  
-<div class="container">
- <div class="row">
-<div class="col-12">
-<h2 class="section-heading text-uppercase text-center mb-5">    Blog </h2>
-        <div class="article-card text-center">
-            <h2 class="article-title">' . $post_title . '</h2>
-            <div class="article-meta">
-                <div class="author-info">
-                    <img style="width:70px;border-radius:50%;height:60px" src="forms/uploads/blog_images/'.$post_image_name.'" alt="Author" class="author-img">
-                    <span class="author-name">' . $created_by . '</span> |
-                    <span class="publish-date">' . $created_at . '</span>
+        <section class="page-section" id="blog">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-12 text-center">
+                        <h2 class="section-heading text-uppercase">Blog</h2>
+                        <h3 class="section-subheading text-muted">Latest Articles and News</h3>
+                    </div>
                 </div>
-             
+                <div class="row">
+                    <div class="col-md-12">
+                        <div id="blog-slider" class="owl-carousel">
+                            <?php
+                            $stmt = $db->prepare('SELECT post_id, post_title, post_image_name, content, created_by, created_at FROM posts ORDER BY created_at DESC LIMIT 6');
+                            $stmt->execute();
+                            $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
+                            if (count($rows) > 0) {
+                                foreach ($rows as $row) {
+                                    $post_id = $row["post_id"];
+                                    $post_title = $row["post_title"];
+                                    $post_image_name = $row["post_image_name"];
+                                    $content = $row["content"];
+                                    $created_by = $row["created_by"];
+                                    $created_at = date("l, j F Y", strtotime($row["created_at"]));
+
+                                    echo '<div class="blog-item">
+                                        <div class="blog-card-carousel" style="background: #fff; border-radius: 15px; box-shadow: 0 5px 20px rgba(0,0,0,0.1); padding: 25px; margin: 10px; min-height: 350px;">
+                                            <div class="blog-image-wrapper" style="text-align: center; margin-bottom: 15px;">
+                                                <img src="forms/uploads/blog_images/' . $post_image_name . '" alt="' . $post_title . '" style="width: 80px; height: 80px; border-radius: 50%; object-fit: cover;">
+                                            </div>
+                                            <h4 style="color: #0b4932; text-align: center; margin-bottom: 10px; font-size: 18px;">' . $post_title . '</h4>
+                                            <p style="color: #D2AA5A; text-align: center; font-size: 14px; margin-bottom: 10px;">
+                                                <i class="far fa-user"></i> ' . $created_by . ' | <i class="far fa-calendar-alt"></i> ' . $created_at . '
+                                            </p>
+                                            <p style="color: #666; text-align: center; font-size: 14px; line-height: 1.6;">' . mb_substr(strip_tags($content), 0, 120) . '...</p>
+                                            <div style="text-align: center; margin-top: 15px;">
+                                                <a href="post.php?id=' . $post_id . '" style="background: #0b4932; color: #fff; padding: 8px 20px; border-radius: 20px; text-decoration: none; font-size: 14px;">Read More</a>
+                                            </div>
+                                        </div>
+                                    </div>';
+                                }
+                            } else {
+                                echo '<div class="text-center"><p class="text-muted">No articles available</p></div>';
+                            }
+                            ?>
+                        </div>
+                    </div>
+                </div>
+                <div class="row mt-4">
+                    <div class="col-12 text-center">
+                        <a href="blog.php" class="btn" style="background: #D2AA5A; color: #fff; padding: 12px 30px; border-radius: 25px;">View All Articles</a>
+                    </div>
+                </div>
             </div>
-           
-            <p class="article-content">' . mb_substr(strip_tags($content), 0, 200) . '...</p>
-            <a href="post.php?id=' . $post_id . '" class="read-more"> show more  </a>
-        </div></div></div></div>
-</section>';
-    }
-}
-?>
+        </section>
 
         <a id="back-to-top" href="#" class="btn btn-info btn-lg back-to-top" role="button" data-toggle="tooltip" data-placement="left"><span class="fa fa-arrow-up"></span></a>
 
@@ -695,6 +705,16 @@ if (count($rows) > 0) {
                     items: 1,
                     itemsDesktop: [1000, 1],
                     itemsDesktopSmall: [979, 1],
+                    itemsTablet: [768, 2],
+                    itemsMobile: [650, 1],
+                    pagination: true,
+                    autoPlay: true
+                });
+                
+                $("#blog-slider").owlCarousel({
+                    items: 3,
+                    itemsDesktop: [1000, 3],
+                    itemsDesktopSmall: [979, 2],
                     itemsTablet: [768, 2],
                     itemsMobile: [650, 1],
                     pagination: true,

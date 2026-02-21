@@ -605,89 +605,74 @@
         </section>
 
         <!-- Blog -->
-
-
-
-       <?php
-$stmt = $db->prepare('SELECT post_id, post_title, post_image_name, content, created_by, created_at FROM posts ORDER BY created_at DESC');
-$stmt->execute();
-$rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
-
-if (count($rows) > 0) {
-    foreach ($rows as $row) {
-        $post_id = $row["post_id"];
-        $post_title = $row["post_title"];
-        $post_image_name = $row["post_image_name"];
-        $content = $row["content"];
-        $created_by = $row["created_by"];
-        //$created_at = date("l, j F Y", strtotime($row["created_at"])); // Format date
-
-$timestamp = strtotime($row["created_at"]);
-
-// English to Arabic translation array
-$days = [
-    'Saturday' => 'السبت',
-    'Sunday' => 'الأحد',
-    'Monday' => 'الإثنين',
-    'Tuesday' => 'الثلاثاء',
-    'Wednesday' => 'الأربعاء',
-    'Thursday' => 'الخميس',
-    'Friday' => 'الجمعة'
-];
-
-$months = [
-    'January' => 'يناير',
-    'February' => 'فبراير',
-    'March' => 'مارس',
-    'April' => 'أبريل',
-    'May' => 'مايو',
-    'June' => 'يونيو',
-    'July' => 'يوليو',
-    'August' => 'أغسطس',
-    'September' => 'سبتمبر',
-    'October' => 'أكتوبر',
-    'November' => 'نوفمبر',
-    'December' => 'ديسمبر'
-];
-
-// Get English parts
-$day_name = date("l", $timestamp);       // e.g., Thursday
-$day_number = date("j", $timestamp);     // e.g., 18
-$month_name = date("F", $timestamp);     // e.g., September
-$year = date("Y", $timestamp);           // e.g., 2025
-
-
-// Translate
-$arabic_day = $days[$day_name];
-$arabic_month = $months[$month_name];
-
-// Output
-$created_at = "$arabic_day $day_number $arabic_month $year";
-
-   echo '<section class="page-section" id="blog">  
-<div class="container">
- <div class="row">
-<div class="col-12">
-<h2 class="section-heading text-uppercase text-center mb-5"> المدونه </h2>
-        <div class="article-card text-center">
-            <h2 class="article-title" style="color:#0b4932">' . $post_title . '</h2>
-            <div class="article-meta">
-                <div class="author-info">
-                    <img style="margin-top: 10px;width:80px;border-radius:50%;height:70px" src="forms/uploads/blog_images/'.$post_image_name.'" alt="Author" class="author-img">
-                    <span class="author-name" style="margin-right: 20px;font-weight: bold;font-size: 25px;margin-bottom: -11px;">' . $created_by . '</span> 
-			<div style="margin-bottom:-25px;"></div>
-                    <span class="publish-date" style="margin-right: 100px;font-size:20px">' . $created_at . '</span>
+        <section class="page-section" id="blog">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-12 text-center">
+                        <h2 class="section-heading text-uppercase">المدونة</h2>
+                        <h3 class="section-subheading text-muted">أحدث المقالات والأخبار</h3>
+                    </div>
                 </div>
-               
+                <div class="row">
+                    <div class="col-md-12">
+                        <div id="blog-slider" class="owl-carousel">
+                            <?php
+                            $stmt = $db->prepare('SELECT post_id, post_title, post_image_name, content, created_by, created_at FROM posts ORDER BY created_at DESC LIMIT 6');
+                            $stmt->execute();
+                            $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
+                            if (count($rows) > 0) {
+                                $days = [
+                                    'Saturday' => 'السبت', 'Sunday' => 'الأحد', 'Monday' => 'الإثنين',
+                                    'Tuesday' => 'الثلاثاء', 'Wednesday' => 'الأربعاء', 'Thursday' => 'الخميس', 'Friday' => 'الجمعة'
+                                ];
+                                $months = [
+                                    'January' => 'يناير', 'February' => 'فبراير', 'March' => 'مارس', 'April' => 'أبريل',
+                                    'May' => 'مايو', 'June' => 'يونيو', 'July' => 'يوليو', 'August' => 'أغسطس',
+                                    'September' => 'سبتمبر', 'October' => 'أكتوبر', 'November' => 'نوفمبر', 'December' => 'ديسمبر'
+                                ];
+
+                                foreach ($rows as $row) {
+                                    $post_id = $row["post_id"];
+                                    $post_title = $row["post_title"];
+                                    $post_image_name = $row["post_image_name"];
+                                    $content = $row["content"];
+                                    $created_by = $row["created_by"];
+                                    $timestamp = strtotime($row["created_at"]);
+                                    $arabic_day = $days[date("l", $timestamp)];
+                                    $arabic_month = $months[date("F", $timestamp)];
+                                    $created_at = $arabic_day . ' ' . date("j", $timestamp) . ' ' . $arabic_month . ' ' . date("Y", $timestamp);
+
+                                    echo '<div class="blog-item">
+                                        <div class="blog-card-carousel" style="background: #fff; border-radius: 15px; box-shadow: 0 5px 20px rgba(0,0,0,0.1); padding: 25px; margin: 10px; min-height: 350px;">
+                                            <div class="blog-image-wrapper" style="text-align: center; margin-bottom: 15px;">
+                                                <img src="forms/uploads/blog_images/' . $post_image_name . '" alt="' . $post_title . '" style="width: 80px; height: 80px; border-radius: 50%; object-fit: cover;">
+                                            </div>
+                                            <h4 style="color: #0b4932; text-align: center; margin-bottom: 10px; font-size: 18px;">' . $post_title . '</h4>
+                                            <p style="color: #D2AA5A; text-align: center; font-size: 14px; margin-bottom: 10px;">
+                                                <i class="far fa-user"></i> ' . $created_by . ' | <i class="far fa-calendar-alt"></i> ' . $created_at . '
+                                            </p>
+                                            <p style="color: #666; text-align: center; font-size: 14px; line-height: 1.6;">' . mb_substr(strip_tags($content), 0, 120) . '...</p>
+                                            <div style="text-align: center; margin-top: 15px;">
+                                                <a href="post.php?id=' . $post_id . '" style="background: #0b4932; color: #fff; padding: 8px 20px; border-radius: 20px; text-decoration: none; font-size: 14px;">اقرأ المزيد</a>
+                                            </div>
+                                        </div>
+                                    </div>';
+                                }
+                            } else {
+                                echo '<div class="text-center"><p class="text-muted">لا توجد مقالات حالياً</p></div>';
+                            }
+                            ?>
+                        </div>
+                    </div>
+                </div>
+                <div class="row mt-4">
+                    <div class="col-12 text-center">
+                        <a href="blog_ar.php" class="btn" style="background: #D2AA5A; color: #fff; padding: 12px 30px; border-radius: 25px;">عرض جميع المقالات</a>
+                    </div>
+                </div>
             </div>
-           
-            <p class="article-content mt-2" style="font-size: 20px;">' . mb_substr(strip_tags($content), 0, 200) . '...</p>
-            <a href="post.php?id=' . $post_id . '" class="read-more" >اقرأ المزيد</a>
-        </div></div></div></div>
-</section>';
-    }
-}
-?>
+        </section>
 
 
 
@@ -721,6 +706,16 @@ $created_at = "$arabic_day $day_number $arabic_month $year";
                     items: 1,
                     itemsDesktop: [1000, 1],
                     itemsDesktopSmall: [979, 1],
+                    itemsTablet: [768, 2],
+                    itemsMobile: [650, 1],
+                    pagination: true,
+                    autoPlay: true
+                });
+                
+                $("#blog-slider").owlCarousel({
+                    items: 3,
+                    itemsDesktop: [1000, 3],
+                    itemsDesktopSmall: [979, 2],
                     itemsTablet: [768, 2],
                     itemsMobile: [650, 1],
                     pagination: true,
