@@ -201,59 +201,30 @@
             </div>
             <div class="row">
                 <!-- Client 1 -->
-                <div class="col-lg-3 col-md-4 col-sm-6">
+                <div class="col-lg-4 col-md-6">
                     <div class="client-card">
-                        <img src="assets/dist/images/clients/client1.png" alt="عميل 1" class="client-logo">
-                        <h4 class="client-name">اسم الشركة 1</h4>
+                        <img src="assets/dist/images/clients/client1.webp." alt="الهيئة العامة للنقل" class="client-logo">
+                        <h4 class="client-name">الهيئة العامة للنقل</h4>
+                        <p class="client-description">الهيئة المسؤولة عن تنظيم قطاع النقل في المملكة العربية السعودية</p>
+                        <a href="https://www.tga.gov.sa/en" target="_blank" class="client-link">زيارة الموقع</a>
                     </div>
                 </div>
                 <!-- Client 2 -->
-                <div class="col-lg-3 col-md-4 col-sm-6">
+                <div class="col-lg-4 col-md-6">
                     <div class="client-card">
-                        <img src="assets/dist/images/clients/client2.png" alt="عميل 2" class="client-logo">
-                        <h4 class="client-name">اسم الشركة 2</h4>
+                        <img src="https://momah.gov.sa/themes/custom/momrah-theme/logo.svg" alt="وزارة البلديات والإسكان" class="client-logo">
+                        <h4 class="client-name">وزارة البلديات والإسكان</h4>
+                        <p class="client-description">الوزارة المسؤولة عن تطوير المدن وتوفير السكن في المملكة</p>
+                        <a href="https://momah.gov.sa/ar" target="_blank" class="client-link">زيارة الموقع</a>
                     </div>
                 </div>
                 <!-- Client 3 -->
-                <div class="col-lg-3 col-md-4 col-sm-6">
+                <div class="col-lg-4 col-md-6">
                     <div class="client-card">
-                        <img src="assets/dist/images/clients/client3.png" alt="عميل 3" class="client-logo">
-                        <h4 class="client-name">اسم الشركة 3</h4>
-                    </div>
-                </div>
-                <!-- Client 4 -->
-                <div class="col-lg-3 col-md-4 col-sm-6">
-                    <div class="client-card">
-                        <img src="assets/dist/images/clients/client4.png" alt="عميل 4" class="client-logo">
-                        <h4 class="client-name">اسم الشركة 4</h4>
-                    </div>
-                </div>
-                <!-- Client 5 -->
-                <div class="col-lg-3 col-md-4 col-sm-6">
-                    <div class="client-card">
-                        <img src="assets/dist/images/clients/client5.png" alt="عميل 5" class="client-logo">
-                        <h4 class="client-name">اسم الشركة 5</h4>
-                    </div>
-                </div>
-                <!-- Client 6 -->
-                <div class="col-lg-3 col-md-4 col-sm-6">
-                    <div class="client-card">
-                        <img src="assets/dist/images/clients/client6.png" alt="عميل 6" class="client-logo">
-                        <h4 class="client-name">اسم الشركة 6</h4>
-                    </div>
-                </div>
-                <!-- Client 7 -->
-                <div class="col-lg-3 col-md-4 col-sm-6">
-                    <div class="client-card">
-                        <img src="assets/dist/images/clients/client7.png" alt="عميل 7" class="client-logo">
-                        <h4 class="client-name">اسم الشركة 7</h4>
-                    </div>
-                </div>
-                <!-- Client 8 -->
-                <div class="col-lg-3 col-md-4 col-sm-6">
-                    <div class="client-card">
-                        <img src="assets/dist/images/clients/client8.png" alt="عميل 8" class="client-logo">
-                        <h4 class="client-name">اسم الشركة 8</h4>
+                        <img src="assets/dist/images/clients/client3.png" alt="مركز الملك عبدالله للاستشارات" class="client-logo">
+                        <h4 class="client-name">مركز الملك عبدالله للاستشارات</h4>
+                        <p class="client-description">مركز استشاري رائد يقدم حلولاً استراتيجية للقطاعين العام والخاص</p>
+                        <a href="#" target="_blank" class="client-link">زيارة الموقع</a>
                     </div>
                 </div>
             </div>

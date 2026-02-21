@@ -184,59 +184,30 @@
             </div>
             <div class="row">
                 <!-- Client 1 -->
-                <div class="col-lg-3 col-md-4 col-sm-6">
+                <div class="col-lg-4 col-md-6">
                     <div class="client-card">
-                        <img src="assets/dist/images/clients/client1.png" alt="Client 1" class="client-logo">
-                        <h4 class="client-name">Company Name 1</h4>
+                        <img src="assets/dist/images/clients/client1.webp" alt="Transport General Authority" class="client-logo">
+                        <h4 class="client-name">Transport General Authority</h4>
+                        <p class="client-description">The authority responsible for regulating the transport sector in Saudi Arabia</p>
+                        <a href="https://www.tga.gov.sa/en" target="_blank" class="client-link">Visit Website</a>
                     </div>
                 </div>
                 <!-- Client 2 -->
-                <div class="col-lg-3 col-md-4 col-sm-6">
+                <div class="col-lg-4 col-md-6">
                     <div class="client-card">
-                        <img src="assets/dist/images/clients/client2.png" alt="Client 2" class="client-logo">
-                        <h4 class="client-name">Company Name 2</h4>
+                        <img src="https://momah.gov.sa/themes/custom/momrah-theme/logo.svg" alt="Ministry of Municipalities and Housing" class="client-logo">
+                        <h4 class="client-name">Ministry of Municipalities and Housing</h4>
+                        <p class="client-description">The ministry responsible for developing cities and providing housing in the Kingdom</p>
+                        <a href="https://momah.gov.sa/ar" target="_blank" class="client-link">Visit Website</a>
                     </div>
                 </div>
                 <!-- Client 3 -->
-                <div class="col-lg-3 col-md-4 col-sm-6">
+                <div class="col-lg-4 col-md-6">
                     <div class="client-card">
-                        <img src="assets/dist/images/clients/client3.png" alt="Client 3" class="client-logo">
-                        <h4 class="client-name">Company Name 3</h4>
-                    </div>
-                </div>
-                <!-- Client 4 -->
-                <div class="col-lg-3 col-md-4 col-sm-6">
-                    <div class="client-card">
-                        <img src="assets/dist/images/clients/client4.png" alt="Client 4" class="client-logo">
-                        <h4 class="client-name">Company Name 4</h4>
-                    </div>
-                </div>
-                <!-- Client 5 -->
-                <div class="col-lg-3 col-md-4 col-sm-6">
-                    <div class="client-card">
-                        <img src="assets/dist/images/clients/client5.png" alt="Client 5" class="client-logo">
-                        <h4 class="client-name">Company Name 5</h4>
-                    </div>
-                </div>
-                <!-- Client 6 -->
-                <div class="col-lg-3 col-md-4 col-sm-6">
-                    <div class="client-card">
-                        <img src="assets/dist/images/clients/client6.png" alt="Client 6" class="client-logo">
-                        <h4 class="client-name">Company Name 6</h4>
-                    </div>
-                </div>
-                <!-- Client 7 -->
-                <div class="col-lg-3 col-md-4 col-sm-6">
-                    <div class="client-card">
-                        <img src="assets/dist/images/clients/client7.png" alt="Client 7" class="client-logo">
-                        <h4 class="client-name">Company Name 7</h4>
-                    </div>
-                </div>
-                <!-- Client 8 -->
-                <div class="col-lg-3 col-md-4 col-sm-6">
-                    <div class="client-card">
-                        <img src="assets/dist/images/clients/client8.png" alt="Client 8" class="client-logo">
-                        <h4 class="client-name">Company Name 8</h4>
+                        <img src="assets/dist/images/clients/client3.jpeg" alt="King Abdullah Center for Consultancy" class="client-logo">
+                        <h4 class="client-name">King Abdullah Center for Consultancy</h4>
+                        <p class="client-description">A leading consultancy center providing strategic solutions for public and private sectors</p>
+                        <a href="#" target="_blank" class="client-link">Visit Website</a>
                     </div>
                 </div>
             </div>
