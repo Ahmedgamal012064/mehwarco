@@ -240,9 +240,9 @@
                 <!-- Infographic 2 -->
                 <div class="col-lg-4 col-md-6">
                     <div class="infographic-card">
-                        <img src="assets/dist/images/infographics/infographic2.jpg" alt="Infographic 2" class="infographic-image" data-toggle="modal" data-target="#infographicModal2">
+                        <img src="assets/dist/images/infographics/2.jpeg" alt="Infographic 2" class="infographic-image" data-toggle="modal" data-target="#infographicModal2">
                         <div class="infographic-content">
-                                <h4 class="infographic-title">Infographic Title Two</h4>
+                                <!-- <h4 class="infographic-title">Infographic Title Two</h4> -->
                                 <p class="infographic-date"><i class="far fa-calendar-alt"></i> February 2026</p>
                             <a href="#" class="btn-view" data-toggle="modal" data-target="#infographicModal2"><i class="fas fa-eye"></i> View</a>
                         </div>
