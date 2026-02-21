@@ -229,10 +229,10 @@
                 <!-- Infographic 1 -->
                 <div class="col-lg-4 col-md-6">
                     <div class="infographic-card">
-                        <img src="assets/dist/images/infographics/infographic1.jpg" alt="Infographic 1" class="infographic-image" data-toggle="modal" data-target="#infographicModal1">
+                        <img src="assets/dist/images/infographics/1.jpeg" alt="Infographic 1" class="infographic-image" data-toggle="modal" data-target="#infographicModal1">
                         <div class="infographic-content">
-                            <h4 class="infographic-title">Infographic Title One</h4>
-                            <p class="infographic-date"><i class="far fa-calendar-alt"></i> January 2026</p>
+                            <!-- <h4 class="infographic-title">Infographic Title One</h4> -->
+                            <!-- <p class="infographic-date"><i class="far fa-calendar-alt"></i> January 2026</p> -->
                             <a href="#" class="btn-view" data-toggle="modal" data-target="#infographicModal1"><i class="fas fa-eye"></i> View</a>
                         </div>
                     </div>
@@ -242,8 +242,8 @@
                     <div class="infographic-card">
                         <img src="assets/dist/images/infographics/infographic2.jpg" alt="Infographic 2" class="infographic-image" data-toggle="modal" data-target="#infographicModal2">
                         <div class="infographic-content">
-                            <h4 class="infographic-title">Infographic Title Two</h4>
-                            <p class="infographic-date"><i class="far fa-calendar-alt"></i> February 2026</p>
+                                <h4 class="infographic-title">Infographic Title Two</h4>
+                                <p class="infographic-date"><i class="far fa-calendar-alt"></i> February 2026</p>
                             <a href="#" class="btn-view" data-toggle="modal" data-target="#infographicModal2"><i class="fas fa-eye"></i> View</a>
                         </div>
                     </div>
@@ -251,11 +251,107 @@
                 <!-- Infographic 3 -->
                 <div class="col-lg-4 col-md-6">
                     <div class="infographic-card">
-                        <img src="assets/dist/images/infographics/infographic3.jpg" alt="Infographic 3" class="infographic-image" data-toggle="modal" data-target="#infographicModal3">
+                        <img src="assets/dist/images/infographics/3.jpeg" alt="Infographic 3" class="infographic-image" data-toggle="modal" data-target="#infographicModal3">
                         <div class="infographic-content">
-                            <h4 class="infographic-title">Infographic Title Three</h4>
-                            <p class="infographic-date"><i class="far fa-calendar-alt"></i> March 2026</p>
+                            <!-- <h4 class="infographic-title">Infographic Title Three</h4> -->
+                            <!-- <p class="infographic-date"><i class="far fa-calendar-alt"></i> March 2026</p> -->
                             <a href="#" class="btn-view" data-toggle="modal" data-target="#infographicModal3"><i class="fas fa-eye"></i> View</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Infographic 4 -->
+                <div class="col-lg-4 col-md-6">
+                    <div class="infographic-card">
+                        <img src="assets/dist/images/infographics/4.jpeg" alt="Infographic 4" class="infographic-image" data-toggle="modal" data-target="#infographicModal4">
+                        <div class="infographic-content">
+                            <!-- <h4 class="infographic-title">Infographic Title Four</h4> -->
+                            <!-- <p class="infographic-date"><i class="far fa-calendar-alt"></i> April 2026</p> -->
+                            <a href="#" class="btn-view" data-toggle="modal" data-target="#infographicModal4"><i class="fas fa-eye"></i> View</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Infographic 5 -->
+                <div class="col-lg-4 col-md-6">
+                    <div class="infographic-card">
+                        <img src="assets/dist/images/infographics/5.jpeg" alt="Infographic 5" class="infographic-image" data-toggle="modal" data-target="#infographicModal5">
+                        <div class="infographic-content">
+                            <!-- <h4 class="infographic-title">Infographic Title Five</h4> -->
+                            <!-- <p class="infographic-date"><i class="far fa-calendar-alt"></i> May 2026</p> -->
+                            <a href="#" class="btn-view" data-toggle="modal" data-target="#infographicModal5"><i class="fas fa-eye"></i> View</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Infographic 6 -->
+                <div class="col-lg-4 col-md-6">
+                    <div class="infographic-card">
+                        <img src="assets/dist/images/infographics/6.jpeg" alt="Infographic 6" class="infographic-image" data-toggle="modal" data-target="#infographicModal6">
+                        <div class="infographic-content">
+                            <!-- <h4 class="infographic-title">Infographic Title Six</h4> -->
+                            <!-- <p class="infographic-date"><i class="far fa-calendar-alt"></i> June 2026</p> -->
+                            <a href="#" class="btn-view" data-toggle="modal" data-target="#infographicModal6"><i class="fas fa-eye"></i> View</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Infographic 7 -->
+                <div class="col-lg-4 col-md-6">
+                    <div class="infographic-card">
+                        <img src="assets/dist/images/infographics/7.jpeg" alt="Infographic 7" class="infographic-image" data-toggle="modal" data-target="#infographicModal7">
+                        <div class="infographic-content">
+                            <!-- <h4 class="infographic-title">Infographic Title Seven</h4> -->
+                            <!-- <p class="infographic-date"><i class="far fa-calendar-alt"></i> June 2026</p> -->
+                            <a href="#" class="btn-view" data-toggle="modal" data-target="#infographicModal6"><i class="fas fa-eye"></i> View</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Infographic 8 -->
+                <div class="col-lg-4 col-md-6">
+                    <div class="infographic-card">
+                        <img src="assets/dist/images/infographics/8.jpeg" alt="Infographic 8" class="infographic-image" data-toggle="modal" data-target="#infographicModal8">
+                        <div class="infographic-content">
+                            <!-- <h4 class="infographic-title">Infographic Title Eight</h4> -->
+                            <!-- <p class="infographic-date"><i class="far fa-calendar-alt"></i> August 2026</p> -->
+                            <a href="#" class="btn-view" data-toggle="modal" data-target="#infographicModal8"><i class="fas fa-eye"></i> View</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Infographic 9 -->
+                <div class="col-lg-4 col-md-6">
+                    <div class="infographic-card">
+                        <img src="assets/dist/images/infographics/9.jpeg" alt="Infographic 9" class="infographic-image" data-toggle="modal" data-target="#infographicModal9">
+                        <div class="infographic-content">
+                            <!-- <h4 class="infographic-title">Infographic Title Nine</h4> -->
+                            <!-- <p class="infographic-date"><i class="far fa-calendar-alt"></i> September 2026</p> -->
+                            <a href="#" class="btn-view" data-toggle="modal" data-target="#infographicModal9"><i class="fas fa-eye"></i> View</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Infographic 10 -->
+                <div class="col-lg-4 col-md-6">
+                    <div class="infographic-card">
+                        <img src="assets/dist/images/infographics/10.jpeg" alt="Infographic 10" class="infographic-image" data-toggle="modal" data-target="#infographicModal10">
+                        <div class="infographic-content">
+                            <!-- <h4 class="infographic-title">Infographic Title Ten</h4> -->
+                            <!-- <p class="infographic-date"><i class="far fa-calendar-alt"></i> October 2026</p> -->
+                            <a href="#" class="btn-view" data-toggle="modal" data-target="#infographicModal10"><i class="fas fa-eye"></i> View</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Infographic 11 -->
+                <div class="col-lg-4 col-md-6">
+                    <div class="infographic-card">
+                        <img src="assets/dist/images/infographics/11.jpeg" alt="Infographic 11" class="infographic-image" data-toggle="modal" data-target="#infographicModal11">
+                        <div class="infographic-content">
+                            <!-- <h4 class="infographic-title">Infographic Title Eleven</h4> -->
+                            <!-- <p class="infographic-date"><i class="far fa-calendar-alt"></i> October 2026</p> -->
+                            <a href="#" class="btn-view" data-toggle="modal" data-target="#infographicModal10"><i class="fas fa-eye"></i> View</a>
                         </div>
                     </div>
                 </div>
@@ -268,13 +364,13 @@
         <div class="modal-dialog modal-lg" role="document">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title">Infographic Title One</h5>
+                    <!-- <h5 class="modal-title">Infographic Title One</h5> -->
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
                     </button>
                 </div>
                 <div class="modal-body">
-                    <img src="assets/dist/images/infographics/infographic1.jpg" alt="Infographic 1">
+                    <img src="assets/dist/images/infographics/1.jpeg" alt="Infographic 1">
                 </div>
             </div>
         </div>
@@ -284,13 +380,13 @@
         <div class="modal-dialog modal-lg" role="document">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title">Infographic Title Two</h5>
+                    <!-- <h5 class="modal-title">Infographic Title Two</h5> -->
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
                     </button>
                 </div>
                 <div class="modal-body">
-                    <img src="assets/dist/images/infographics/infographic2.jpg" alt="Infographic 2">
+                    <img src="assets/dist/images/infographics/2.jpeg" alt="Infographic 2">
                 </div>
             </div>
         </div>
@@ -300,17 +396,147 @@
         <div class="modal-dialog modal-lg" role="document">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title">Infographic Title Three</h5>
+                    <!-- <h5 class="modal-title">Infographic Title Three</h5> -->
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
                     </button>
                 </div>
                 <div class="modal-body">
-                    <img src="assets/dist/images/infographics/infographic3.jpg" alt="Infographic 3">
+                    <img src="assets/dist/images/infographics/3.jpeg" alt="Infographic 3">
                 </div>
             </div>
         </div>
     </div>
+
+    <div class="modal fade modal-infographic" id="infographicModal4" tabindex="-1" role="dialog">
+        <div class="modal-dialog modal-lg" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <!-- <h5 class="modal-title">Infographic Title Four</h5> -->
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <img src="assets/dist/images/infographics/4.jpeg" alt="Infographic 4">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade modal-infographic" id="infographicModal5" tabindex="-1" role="dialog">
+        <div class="modal-dialog modal-lg" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <!-- <h5 class="modal-title">Infographic Title Five</h5> -->
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <img src="assets/dist/images/infographics/5.jpeg" alt="Infographic 5">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade modal-infographic" id="infographicModal6" tabindex="-1" role="dialog">
+        <div class="modal-dialog modal-lg" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <!-- <h5 class="modal-title">Infographic Title Six</h5> -->
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <img src="assets/dist/images/infographics/6.jpeg" alt="Infographic 6">
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="modal fade modal-infographic" id="infographicModal7" tabindex="-1" role="dialog">
+        <div class="modal-dialog modal-lg" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <!-- <h5 class="modal-title">Infographic Title Seven</h5> -->
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <img src="assets/dist/images/infographics/7.jpeg" alt="Infographic 7">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade modal-infographic" id="infographicModal8" tabindex="-1" role="dialog">
+        <div class="modal-dialog modal-lg" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <!-- <h5 class="modal-title">Infographic Title Eight</h5> -->
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <img src="assets/dist/images/infographics/8.jpeg" alt="Infographic 8">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade modal-infographic" id="infographicModal9" tabindex="-1" role="dialog">
+        <div class="modal-dialog modal-lg" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <!-- <h5 class="modal-title">Infographic Title Nine</h5> -->
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <img src="assets/dist/images/infographics/9.jpeg" alt="Infographic 9">
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal fade modal-infographic" id="infographicModal10" tabindex="-1" role="dialog">
+        <div class="modal-dialog modal-lg" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <!-- <h5 class="modal-title">Infographic Title Ten</h5> -->
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <img src="assets/dist/images/infographics/10.jpeg" alt="Infographic 10">
+                </div>
+            </div>
+        </div>
+    </div>
+
+        <div class="modal fade modal-infographic" id="infographicModal11" tabindex="-1" role="dialog">
+        <div class="modal-dialog modal-lg" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <!-- <h5 class="modal-title">Infographic Title Eleven</h5> -->
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <img src="assets/dist/images/infographics/11.jpeg" alt="Infographic 11">
+                </div>
+            </div>
+        </div>
+    </div>
+
+
 
     <!-- Footer -->
     <footer class="footer">

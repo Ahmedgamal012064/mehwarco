@@ -233,10 +233,10 @@
                 <!-- Infographic 1 -->
                 <div class="col-lg-4 col-md-6">
                     <div class="infographic-card">
-                        <img src="assets/dist/images/infographics/infographic1.jpg" alt="انفوجرافيك 1" class="infographic-image" data-toggle="modal" data-target="#infographicModal1">
+                        <img src="assets/dist/images/infographics/1.jpeg" alt="انفوجرافيك 1" class="infographic-image" data-toggle="modal" data-target="#infographicModal1">
                         <div class="infographic-content">
-                            <h4 class="infographic-title">عنوان الانفوجرافيك الأول</h4>
-                            <p class="infographic-date"><i class="far fa-calendar-alt"></i> يناير 2026</p>
+                            <!-- <h4 class="infographic-title">عنوان الانفوجرافيك الأول</h4> -->
+                            <!-- <p class="infographic-date"><i class="far fa-calendar-alt"></i> يناير 2026</p> -->
                             <a href="#" class="btn-view" data-toggle="modal" data-target="#infographicModal1"><i class="fas fa-eye"></i> عرض</a>
                         </div>
                     </div>
@@ -244,10 +244,10 @@
                 <!-- Infographic 2 -->
                 <div class="col-lg-4 col-md-6">
                     <div class="infographic-card">
-                        <img src="assets/dist/images/infographics/infographic2.jpg" alt="انفوجرافيك 2" class="infographic-image" data-toggle="modal" data-target="#infographicModal2">
+                        <img src="assets/dist/images/infographics/2.jpeg" alt="انفوجرافيك 2" class="infographic-image" data-toggle="modal" data-target="#infographicModal2">
                         <div class="infographic-content">
-                            <h4 class="infographic-title">عنوان الانفوجرافيك الثاني</h4>
-                            <p class="infographic-date"><i class="far fa-calendar-alt"></i> فبراير 2026</p>
+                            <!-- <h4 class="infographic-title">عنوان الانفوجرافيك الثاني</h4>
+                            <p class="infographic-date"><i class="far fa-calendar-alt"></i> فبراير 2026</p> -->
                             <a href="#" class="btn-view" data-toggle="modal" data-target="#infographicModal2"><i class="fas fa-eye"></i> عرض</a>
                         </div>
                     </div>
@@ -255,14 +255,111 @@
                 <!-- Infographic 3 -->
                 <div class="col-lg-4 col-md-6">
                     <div class="infographic-card">
-                        <img src="assets/dist/images/infographics/infographic3.jpg" alt="انفوجرافيك 3" class="infographic-image" data-toggle="modal" data-target="#infographicModal3">
+                        <img src="assets/dist/images/infographics/3.jpeg" alt="انفوجرافيك 3" class="infographic-image" data-toggle="modal" data-target="#infographicModal3">
                         <div class="infographic-content">
-                            <h4 class="infographic-title">عنوان الانفوجرافيك الثالث</h4>
-                            <p class="infographic-date"><i class="far fa-calendar-alt"></i> مارس 2026</p>
+                            <!-- <h4 class="infographic-title">عنوان الانفوجرافيك الثالث</h4>
+                            <p class="infographic-date"><i class="far fa-calendar-alt"></i> مارس 2026</p> -->
                             <a href="#" class="btn-view" data-toggle="modal" data-target="#infographicModal3"><i class="fas fa-eye"></i> عرض</a>
                         </div>
                     </div>
                 </div>
+                <!-- Infographic 4 -->
+                <div class="col-lg-4 col-md-6">
+                    <div class="infographic-card">
+                        <img src="assets/dist/images/infographics/4.jpeg" alt="انفوجرافيك 4" class="infographic-image" data-toggle="modal" data-target="#infographicModal4">
+                        <div class="infographic-content">
+                            <!-- <h4 class="infographic-title">عنوان الانفوجرافيك الرابع</h4>
+                            <p class="infographic-date"><i class="far fa-calendar-alt"></i> أبريل 2026</p> -->
+                            <a href="#" class="btn-view" data-toggle="modal" data-target="#infographicModal4"><i class="fas fa-eye"></i> عرض</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Infographic 5 -->
+                <div class="col-lg-4 col-md-6">
+                    <div class="infographic-card">
+                        <img src="assets/dist/images/infographics/5.jpeg" alt="انفوجرافيك 5" class="infographic-image" data-toggle="modal" data-target="#infographicModal5">
+                        <div class="infographic-content">
+                            <!-- <h4 class="infographic-title">عنوان الانفوجرافيك الخامس</h4>
+                            <p class="infographic-date"><i class="far fa-calendar-alt"></i> مايو 2026</p> -->
+                            <a href="#" class="btn-view" data-toggle="modal" data-target="#infographicModal5"><i class="fas fa-eye"></i> عرض</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Infographic 6 -->
+                <div class="col-lg-4 col-md-6">
+                    <div class="infographic-card">
+                        <img src="assets/dist/images/infographics/6.jpeg" alt="انفوجرافيك 6" class="infographic-image" data-toggle="modal" data-target="#infographicModal6">
+                        <div class="infographic-content">
+                            <!-- <h4 class="infographic-title">عنوان الانفوجرافيك السادس</h4>
+                            <p class="infographic-date"><i class="far fa-calendar-alt"></i> يونيو 2026</p> -->
+                            <a href="#" class="btn-view" data-toggle="modal" data-target="#infographicModal6"><i class="fas fa-eye"></i> عرض</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Infographic 7 -->
+                <div class="col-lg-4 col-md-6">
+                    <div class="infographic-card">
+                        <img src="assets/dist/images/infographics/7.jpeg" alt="انفوجرافيك 7" class="infographic-image" data-toggle="modal" data-target="#infographicModal7">
+                        <div class="infographic-content">
+                            <!-- <h4 class="infographic-title">عنوان الانفوجرافيك السابع</h4>
+                            <p class="infographic-date"><i class="far fa-calendar-alt"></i> يوليو 2026</p> -->
+                            <a href="#" class="btn-view" data-toggle="modal" data-target="#infographicModal7"><i class="fas fa-eye"></i> عرض</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Infographic 8 -->
+                <div class="col-lg-4 col-md-6">
+                    <div class="infographic-card">
+                        <img src="assets/dist/images/infographics/8.jpeg" alt="انفوجرافيك 8" class="infographic-image" data-toggle="modal" data-target="#infographicModal8">
+                        <div class="infographic-content">
+                            <!-- <h4 class="infographic-title">عنوان الانفوجرافيك الثامن</h4>
+                            <p class="infographic-date"><i class="far fa-calendar-alt"></i> أغسطس 2026</p> -->
+                            <a href="#" class="btn-view" data-toggle="modal" data-target="#infographicModal8"><i class="fas fa-eye"></i> عرض</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Infographic 9 -->
+                <div class="col-lg-4 col-md-6">
+                    <div class="infographic-card">
+                        <img src="assets/dist/images/infographics/9.jpeg" alt="انفوجرافيك 9" class="infographic-image" data-toggle="modal" data-target="#infographicModal9">
+                        <div class="infographic-content">
+                            <!-- <h4 class="infographic-title">عنوان الانفوجرافيك التاسع</h4>
+                            <p class="infographic-date"><i class="far fa-calendar-alt"></i> سبتمبر 2026</p> -->
+                            <a href="#" class="btn-view" data-toggle="modal" data-target="#infographicModal9"><i class="fas fa-eye"></i> عرض</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Infographic 10 -->
+                <div class="col-lg-4 col-md-6">
+                    <div class="infographic-card">
+                        <img src="assets/dist/images/infographics/10.jpeg" alt="انفوجرافيك 10" class="infographic-image" data-toggle="modal" data-target="#infographicModal10">
+                        <div class="infographic-content">
+                            <!-- <h4 class="infographic-title">عنوان الانفوجرافيك العاشر</h4>
+                            <p class="infographic-date"><i class="far fa-calendar-alt"></i> أكتوبر 2026</p> -->
+                            <a href="#" class="btn-view" data-toggle="modal" data-target="#infographicModal10"><i class="fas fa-eye"></i> عرض</a>
+                        </div>
+                    </div>
+                </div>
+
+
+                <!-- Infographic 11 -->
+                <div class="col-lg-4 col-md-6">
+                    <div class="infographic-card">
+                        <img src="assets/dist/images/infographics/11.jpeg" alt="انفوجرافيك 11" class="infographic-image" data-toggle="modal" data-target="#infographicModal11">
+                        <div class="infographic-content">
+                            <!-- <h4 class="infographic-title">عنوان الانفوجرافيك الحادي عشر</h4>
+                            <p class="infographic-date"><i class="far fa-calendar-alt"></i> أكتوبر 2026</p> -->
+                            <a href="#" class="btn-view" data-toggle="modal" data-target="#infographicModal10"><i class="fas fa-eye"></i> عرض</a>
+                        </div>
+                    </div>
+                </div>
+
             </div>
         </div>
     </section>
@@ -272,13 +369,13 @@
         <div class="modal-dialog modal-lg" role="document">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title">عنوان الانفوجرافيك الأول</h5>
+                    <!-- <h5 class="modal-title">عنوان الانفوجرافيك الأول</h5> -->
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
                     </button>
                 </div>
                 <div class="modal-body">
-                    <img src="assets/dist/images/infographics/infographic1.jpg" alt="انفوجرافيك 1">
+                    <img src="assets/dist/images/infographics/1.jpeg" alt="انفوجرافيك 1">
                 </div>
             </div>
         </div>
@@ -288,13 +385,13 @@
         <div class="modal-dialog modal-lg" role="document">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title">عنوان الانفوجرافيك الثاني</h5>
+                    <!-- <h5 class="modal-title">عنوان الانفوجرافيك الثاني</h5> -->
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
                     </button>
                 </div>
                 <div class="modal-body">
-                    <img src="assets/dist/images/infographics/infographic2.jpg" alt="انفوجرافيك 2">
+                    <img src="assets/dist/images/infographics/2.jpeg" alt="انفوجرافيك 2">
                 </div>
             </div>
         </div>
@@ -304,13 +401,151 @@
         <div class="modal-dialog modal-lg" role="document">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title">عنوان الانفوجرافيك الثالث</h5>
+                    <!-- <h5 class="modal-title">عنوان الانفوجرافيك الثالث</h5> -->
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
                     </button>
                 </div>
                 <div class="modal-body">
-                    <img src="assets/dist/images/infographics/infographic3.jpg" alt="انفوجرافيك 3">
+                    <img src="assets/dist/images/infographics/3.jpeg" alt="انفوجرافيك 3">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal 4 -->
+    <div class="modal fade modal-infographic" id="infographicModal4" tabindex="-1" role="dialog">
+        <div class="modal-dialog modal-lg" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <!-- <h5 class="modal-title">عنوان الانفوجرافيك الرابع</h5> -->
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <img src="assets/dist/images/infographics/4.jpeg" alt="انفوجرافيك 4">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal 5 -->
+    <div class="modal fade modal-infographic" id="infographicModal5" tabindex="-1" role="dialog">
+        <div class="modal-dialog modal-lg" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <!-- <h5 class="modal-title">عنوان الانفوجرافيك الخامس</h5> -->
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <img src="assets/dist/images/infographics/5.jpeg" alt="انفوجرافيك 5">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal 6 -->
+    <div class="modal fade modal-infographic" id="infographicModal6" tabindex="-1" role="dialog">
+        <div class="modal-dialog modal-lg" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <!-- <h5 class="modal-title">عنوان الانفوجرافيك السادس</h5> -->
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <img src="assets/dist/images/infographics/6.jpeg" alt="انفوجرافيك 6">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal 7 -->
+    <div class="modal fade modal-infographic" id="infographicModal7" tabindex="-1" role="dialog">
+        <div class="modal-dialog modal-lg" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <!-- <h5 class="modal-title">عنوان الانفوجرافيك السابع</h5> -->
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <img src="assets/dist/images/infographics/7.jpeg" alt="انفوجرافيك 7">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal 8 -->
+    <div class="modal fade modal-infographic" id="infographicModal8" tabindex="-1" role="dialog">
+        <div class="modal-dialog modal-lg" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <!-- <h5 class="modal-title">عنوان الانفوجرافيك الثامن</h5> -->
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <img src="assets/dist/images/infographics/8.jpeg" alt="انفوجرافيك 8">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal 9 -->
+    <div class="modal fade modal-infographic" id="infographicModal9" tabindex="-1" role="dialog">
+        <div class="modal-dialog modal-lg" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <!-- <h5 class="modal-title">عنوان الانفوجرافيك التاسع</h5> -->
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <img src="assets/dist/images/infographics/9.jpeg" alt="انفوجرافيك 9">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal 10 -->
+    <div class="modal fade modal-infographic" id="infographicModal10" tabindex="-1" role="dialog">
+        <div class="modal-dialog modal-lg" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <!-- <h5 class="modal-title">عنوان الانفوجرافيك العاشر</h5> -->
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <img src="assets/dist/images/infographics/10.jpeg" alt="انفوجرافيك 10">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    
+
+    <!-- Modal 11 -->
+    <div class="modal fade modal-infographic" id="infographicModal11" tabindex="-1" role="dialog">
+        <div class="modal-dialog modal-lg" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <!-- <h5 class="modal-title">عنوان الانفوجرافيك الحادي عشر</h5> -->
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <img src="assets/dist/images/infographics/11.jpeg" alt="انفوجرافيك 11">
                 </div>
             </div>
         </div>
