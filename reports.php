@@ -216,40 +216,11 @@
                 </div>
             </div>
             <div class="row">
-                <!-- Report 1 -->
-                <div class="col-lg-4 col-md-6">
-                    <div class="report-card">
-                        <img src="assets/dist/images/reports/report1.jpg" alt="Report 1" class="report-image">
-                        <div class="report-content">
-                            <h4 class="report-title">Report Title One</h4>
-                            <p class="report-description">A brief description of the report highlighting its main content and key findings.</p>
-                            <p class="report-date"><i class="far fa-calendar-alt"></i> January 2026</p>
-                            <a href="#" class="btn-download"><i class="fas fa-download"></i> Download</a>
-                        </div>
-                    </div>
-                </div>
-                <!-- Report 2 -->
-                <div class="col-lg-4 col-md-6">
-                    <div class="report-card">
-                        <img src="assets/dist/images/reports/report2.jpg" alt="Report 2" class="report-image">
-                        <div class="report-content">
-                            <h4 class="report-title">Report Title Two</h4>
-                            <p class="report-description">A brief description of the report highlighting its main content and key findings.</p>
-                            <p class="report-date"><i class="far fa-calendar-alt"></i> February 2026</p>
-                            <a href="#" class="btn-download"><i class="fas fa-download"></i> Download</a>
-                        </div>
-                    </div>
-                </div>
-                <!-- Report 3 -->
-                <div class="col-lg-4 col-md-6">
-                    <div class="report-card">
-                        <img src="assets/dist/images/reports/report3.jpg" alt="Report 3" class="report-image">
-                        <div class="report-content">
-                            <h4 class="report-title">Report Title Three</h4>
-                            <p class="report-description">A brief description of the report highlighting its main content and key findings.</p>
-                            <p class="report-date"><i class="far fa-calendar-alt"></i> March 2026</p>
-                            <a href="#" class="btn-download"><i class="fas fa-download"></i> Download</a>
-                        </div>
+                <div class="col-sm-12">
+                    <div class="team-member">
+                        <h4>QUARTERLY ECONOMIC BULLETIN</h4>
+                        <p class="text-muted"><a target="_blank" href="https://www.dropbox.com/sh/9dbo5s5vbbh0e61/AABu-Rc-th-4qWSCJjs-8SPya?dl=0&preview=MEHWAR+QUARTERLY+ECONOMIC+BULLETIN.pdf">How Saudi Arabia has significantly managed to mitigate risks from Covid-19 pandemic.</a></p>
+                        <p class="text-muted"><a target="_blank" href="https://www.dropbox.com/s/h6jmhdk9ixrso9z/MEHWAR%20ECONOMIC%20PERFPRMANCE%20BULLETIN%20-November%202021.pdf">From Economic Recovery to Resilience: How Saudi Arabia Alleviate Risks in Post Covid-19 World.</a></p>
                     </div>
                 </div>
             </div>

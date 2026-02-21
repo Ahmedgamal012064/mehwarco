@@ -220,40 +220,11 @@
                 </div>
             </div>
             <div class="row">
-                <!-- Report 1 -->
-                <div class="col-lg-4 col-md-6">
-                    <div class="report-card">
-                        <img src="assets/dist/images/reports/report1.jpg" alt="تقرير 1" class="report-image">
-                        <div class="report-content">
-                            <h4 class="report-title">عنوان التقرير الأول</h4>
-                            <p class="report-description">وصف مختصر للتقرير يوضح محتواه الرئيسي والنتائج المهمة.</p>
-                            <p class="report-date"><i class="far fa-calendar-alt"></i> يناير 2026</p>
-                            <a href="#" class="btn-download"><i class="fas fa-download"></i> تحميل</a>
-                        </div>
-                    </div>
-                </div>
-                <!-- Report 2 -->
-                <div class="col-lg-4 col-md-6">
-                    <div class="report-card">
-                        <img src="assets/dist/images/reports/report2.jpg" alt="تقرير 2" class="report-image">
-                        <div class="report-content">
-                            <h4 class="report-title">عنوان التقرير الثاني</h4>
-                            <p class="report-description">وصف مختصر للتقرير يوضح محتواه الرئيسي والنتائج المهمة.</p>
-                            <p class="report-date"><i class="far fa-calendar-alt"></i> فبراير 2026</p>
-                            <a href="#" class="btn-download"><i class="fas fa-download"></i> تحميل</a>
-                        </div>
-                    </div>
-                </div>
-                <!-- Report 3 -->
-                <div class="col-lg-4 col-md-6">
-                    <div class="report-card">
-                        <img src="assets/dist/images/reports/report3.jpg" alt="تقرير 3" class="report-image">
-                        <div class="report-content">
-                            <h4 class="report-title">عنوان التقرير الثالث</h4>
-                            <p class="report-description">وصف مختصر للتقرير يوضح محتواه الرئيسي والنتائج المهمة.</p>
-                            <p class="report-date"><i class="far fa-calendar-alt"></i> مارس 2026</p>
-                            <a href="#" class="btn-download"><i class="fas fa-download"></i> تحميل</a>
-                        </div>
+                <div class="col-sm-12">
+                    <div class="team-member">
+                        <h4>النشرة الاقتصادية ربع السنوية </h4>
+                        <p class="text-muted"><a target="_blank" href="https://www.dropbox.com/sh/9dbo5s5vbbh0e61/AABu-Rc-th-4qWSCJjs-8SPya?dl=0&preview=MEHWAR+QUARTERLY+ECONOMIC+BULLETIN.pdf">كيف تمكنت المملكة العربية السعودية بشكل كبير من التخفيف من المخاطر الناجمة عن جائحة كوفيد-19.</a></p>
+                        <p class="text-muted"><a target="_blank" href="https://www.dropbox.com/s/h6jmhdk9ixrso9z/MEHWAR%20ECONOMIC%20PERFPRMANCE%20BULLETIN%20-November%202021.pdf">من التعافي الاقتصادي إلى القدرة على الصمود: كيف تخفف المملكة العربية السعودية من المخاطر في عالم ما بعد كوفيد-19.</a></p>
                     </div>
                 </div>
             </div>
