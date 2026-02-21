@@ -273,23 +273,33 @@
                 <div class="row">
                     <div class="col-lg-12 text-center">
                         <h2 class="section-heading text-uppercase">التقارير</h2>
+                        <h3 class="section-subheading text-muted">تقاريرنا وأبحاثنا الاقتصادية</h3>
                     </div>
                 </div>
-                <div class="row">
-                    <div class="col-sm-12">
-                        <div class="team-member">
-                            <?php //<img class="mx-auto rounded-circle" src="assets/dist/images/avatar.png" alt=""> 
-                            ?>
-                            <h4>النشرة الاقتصادية ربع السنوية </h4>
-                            <p class="text-muted"><a target="_blank" href="https://www.dropbox.com/sh/9dbo5s5vbbh0e61/AABu-Rc-th-4qWSCJjs-8SPya?dl=0&preview=MEHWAR+QUARTERLY+ECONOMIC+BULLETIN.pdf">كيف تمكنت المملكة العربية السعودية بشكل كبير من التخفيف من المخاطر الناجمة عن جائحة كوفيد-19.</a></p>
-                            <p class="text-muted"><a target="_blank" href="https://www.dropbox.com/s/h6jmhdk9ixrso9z/MEHWAR%20ECONOMIC%20PERFPRMANCE%20BULLETIN%20-November%202021.pdf">من التعافي الاقتصادي إلى القدرة على الصمود: كيف تخفف المملكة العربية السعودية من المخاطر في عالم ما بعد كوفيد-19.</a></p>
+                <div class="row justify-content-center">
+                    <div class="col-lg-6 col-md-8">
+                        <div class="report-card-modern" style="background: #fff; border-radius: 15px; box-shadow: 0 5px 20px rgba(0,0,0,0.1); padding: 30px; margin-bottom: 30px;">
+                            <div class="report-icon text-center" style="margin-bottom: 20px;">
+                                <i class="fas fa-file-pdf" style="font-size: 50px; color: #0b4932;"></i>
+                            </div>
+                            <h4 style="color: #0b4932; text-align: center; margin-bottom: 20px;">النشرة الاقتصادية ربع السنوية</h4>
+                            <div class="report-links">
+                                <a target="_blank" href="https://www.dropbox.com/sh/9dbo5s5vbbh0e61/AABu-Rc-th-4qWSCJjs-8SPya?dl=0&preview=MEHWAR+QUARTERLY+ECONOMIC+BULLETIN.pdf" style="display: block; background: #f8f9fa; padding: 15px 20px; border-radius: 10px; margin-bottom: 15px; color: #333; text-decoration: none; transition: all 0.3s ease; border-right: 4px solid #D2AA5A;">
+                                    <i class="fas fa-download" style="color: #D2AA5A; margin-left: 10px;"></i>
+                                    كيف تمكنت المملكة العربية السعودية بشكل كبير من التخفيف من المخاطر الناجمة عن جائحة كوفيد-19.
+                                </a>
+                                <a target="_blank" href="https://www.dropbox.com/s/h6jmhdk9ixrso9z/MEHWAR%20ECONOMIC%20PERFPRMANCE%20BULLETIN%20-November%202021.pdf" style="display: block; background: #f8f9fa; padding: 15px 20px; border-radius: 10px; margin-bottom: 15px; color: #333; text-decoration: none; transition: all 0.3s ease; border-right: 4px solid #D2AA5A;">
+                                    <i class="fas fa-download" style="color: #D2AA5A; margin-left: 10px;"></i>
+                                    من التعافي الاقتصادي إلى القدرة على الصمود: كيف تخفف المملكة العربية السعودية من المخاطر في عالم ما بعد كوفيد-19.
+                                </a>
+                            </div>
+                            <div class="text-center mt-4">
+                                <a href="reports_ar.php" class="btn" style="background: #0b4932; color: #fff; padding: 12px 30px; border-radius: 25px;">عرض جميع التقارير</a>
+                            </div>
                         </div>
-
                     </div>
-
                 </div>
             </div>
-
         </section>
 
         <!-- Contact -->

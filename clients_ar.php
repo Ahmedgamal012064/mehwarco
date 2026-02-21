@@ -151,16 +151,23 @@
                         <a class="nav-link active" href="clients_ar.php">عملائنا</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="index_ar.php#reports">التقارير</a>
+                        <a class="nav-link" href="partnerships_ar.php">الشراكات</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="insightsDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            الرؤى
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="insightsDropdown">
+                            <a class="dropdown-item" href="blog_ar.php">المدونة</a>
+                            <a class="dropdown-item" href="reports_ar.php">التقارير</a>
+                            <a class="dropdown-item" href="infographics_ar.php">الانفوجرافيك</a>
+                        </div>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="index_ar.php#contact">اتصل بنا</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="index_ar.php#join">انضم لنا</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="post.php">المدونة</a>
                     </li>
 
                     <li id="mini_nav" class="nav-item">

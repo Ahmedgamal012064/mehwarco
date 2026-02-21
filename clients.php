@@ -134,16 +134,23 @@
                         <a class="nav-link active" href="clients.php">Our Clients</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="index.php#reports">Reports</a>
+                        <a class="nav-link" href="partnerships.php">Partnerships</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="insightsDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Insights
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="insightsDropdown">
+                            <a class="dropdown-item" href="blog.php">Blog</a>
+                            <a class="dropdown-item" href="reports.php">Reports</a>
+                            <a class="dropdown-item" href="infographics.php">Infographics</a>
+                        </div>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="index.php#contact">Contact Us</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="index.php#join">Join Us</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="post.php">Blog</a>
                     </li>
 
                     <li id="mini_nav" class="nav-item">

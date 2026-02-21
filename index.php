@@ -290,23 +290,33 @@
                 <div class="row">
                     <div class="col-lg-12 text-center">
                         <h2 class="section-heading text-uppercase">Reports</h2>
+                        <h3 class="section-subheading text-muted">Our Economic Reports and Research</h3>
                     </div>
                 </div>
-                <div class="row">
-                    <div class="col-sm-12">
-                        <div class="team-member">
-                            <?php //<img class="mx-auto rounded-circle" src="assets/dist/images/avatar.png" alt=""> 
-                            ?>
-                            <h4>QUARTERLY ECONOMIC BULLETIN</h4>
-                            <p class="text-muted"><a target="_blank" href="https://www.dropbox.com/sh/9dbo5s5vbbh0e61/AABu-Rc-th-4qWSCJjs-8SPya?dl=0&preview=MEHWAR+QUARTERLY+ECONOMIC+BULLETIN.pdf">How Saudi Arabia has significantly managed to mitigate risks from Covid-19 pandemic. </a></p>
-                            <p class="text-muted"><a target="_blank" href="https://www.dropbox.com/s/h6jmhdk9ixrso9z/MEHWAR%20ECONOMIC%20PERFPRMANCE%20BULLETIN%20-November%202021.pdf">From Economic Recovery to Resilience: How Saudi Arabia Alleviate Risks in Post Covid-19 World. </a></p>
+                <div class="row justify-content-center">
+                    <div class="col-lg-6 col-md-8">
+                        <div class="report-card-modern" style="background: #fff; border-radius: 15px; box-shadow: 0 5px 20px rgba(0,0,0,0.1); padding: 30px; margin-bottom: 30px;">
+                            <div class="report-icon text-center" style="margin-bottom: 20px;">
+                                <i class="fas fa-file-pdf" style="font-size: 50px; color: #0b4932;"></i>
+                            </div>
+                            <h4 style="color: #0b4932; text-align: center; margin-bottom: 20px;">QUARTERLY ECONOMIC BULLETIN</h4>
+                            <div class="report-links">
+                                <a target="_blank" href="https://www.dropbox.com/sh/9dbo5s5vbbh0e61/AABu-Rc-th-4qWSCJjs-8SPya?dl=0&preview=MEHWAR+QUARTERLY+ECONOMIC+BULLETIN.pdf" style="display: block; background: #f8f9fa; padding: 15px 20px; border-radius: 10px; margin-bottom: 15px; color: #333; text-decoration: none; transition: all 0.3s ease; border-left: 4px solid #D2AA5A;">
+                                    <i class="fas fa-download" style="color: #D2AA5A; margin-right: 10px;"></i>
+                                    How Saudi Arabia has significantly managed to mitigate risks from Covid-19 pandemic.
+                                </a>
+                                <a target="_blank" href="https://www.dropbox.com/s/h6jmhdk9ixrso9z/MEHWAR%20ECONOMIC%20PERFPRMANCE%20BULLETIN%20-November%202021.pdf" style="display: block; background: #f8f9fa; padding: 15px 20px; border-radius: 10px; margin-bottom: 15px; color: #333; text-decoration: none; transition: all 0.3s ease; border-left: 4px solid #D2AA5A;">
+                                    <i class="fas fa-download" style="color: #D2AA5A; margin-right: 10px;"></i>
+                                    From Economic Recovery to Resilience: How Saudi Arabia Alleviate Risks in Post Covid-19 World.
+                                </a>
+                            </div>
+                            <div class="text-center mt-4">
+                                <a href="reports.php" class="btn" style="background: #0b4932; color: #fff; padding: 12px 30px; border-radius: 25px;">View All Reports</a>
+                            </div>
                         </div>
-
                     </div>
-
                 </div>
             </div>
-
         </section>
 
         <!-- Contact -->
