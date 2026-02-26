@@ -321,22 +321,22 @@
                         <form method="post">
                             <div class="col-lg-12">
                                 <div class="form-group">
-                                    <input name="your-name" type="text" class="form-control" placeholder="اسمك *">
+                                    <input name="your-name" type="text" class="form-control" placeholder="اسمك *" required>
                                 </div>
                             </div>
                             <div class="col-lg-12">
                                 <div class="form-group {{ $errors->has('email') ? 'has-error' : ''}}">
-                                    <input name="your-email" type="email" class="form-control" placeholder="بريدك الإلكتروني*">
+                                    <input name="your-email" type="email" class="form-control" placeholder="بريدك الإلكتروني*" required>
                                 </div>
                             </div>
                             <div class="col-lg-12">
                                 <div class="form-group {{ $errors->has('mobile') ? 'has-error' : ''}}">
-                                    <input name="your-mobile" type="text" class="form-control" placeholder="هاتفك المحمول*">
+                                    <input name="your-mobile" type="text" class="form-control" placeholder="هاتفك المحمول*" required>
                                 </div>
                             </div>
                             <div class="col-lg-12">
                                 <div class="form-group {{ $errors->has('message') ? 'has-error' : ''}}">
-                                    <input name="your-message" type="textarea" class="form-control" maxlength="1000" placeholder="رسالتك (لا تتجاوز 1000 حرف)*">
+                                    <input name="your-message" type="textarea" class="form-control" maxlength="1000" placeholder="رسالتك (لا تتجاوز 1000 حرف)*" required>
                                 </div>
                             </div>
                             <div class="col-lg-12 text-center">
@@ -388,7 +388,7 @@
                             <div class="row">
                                 <div class="form-group col-lg-6 col-md-12 col-sm-12 col-xs-12">
                                     <p class="text-left">عنوان البريد الإلكتروني:</p>
-                                    <input type="email" name="user_email" id="user_email" class="form-control" value="<?php if (isset($error)) {
+                                    <input type="email" name="user_email" id="user_email" class="form-control" required value="<?php if (isset($error)) {
                                                                                                                             echo htmlspecialchars($_POST['user_email'], ENT_QUOTES);
                                                                                                                         } ?>">
                                 </div>
@@ -399,7 +399,7 @@
                                         <div class="custom-file">
                                             <!-- MAX_FILE_SIZE 4 MB -->
                                             <input type="hidden" name="MAX_FILE_SIZE" value="4096000" />
-                                            <input type="file" id="image_file" name="image_file" accept="image/jpeg, image/png" class="hidden">
+                                            <input type="file" id="image_file" name="image_file" accept="image/jpeg, image/png" class="hidden" required>
                                             <label for="image_file"></label>
                                         </div>
                                     </div>
@@ -410,12 +410,12 @@
                             <div class="row">
                                 <div class="form-group col-lg-6 col-md-12 col-sm-12 col-xs-12">
                                     <p class="text-left">الاسم الكامل:</p>
-                                    <input type="text" name="full_name" id="full_name" class="form-control">
+                                    <input type="text" name="full_name" id="full_name" class="form-control" required>
                                 </div>
 
                                 <div class="form-group col-lg-6 col-md-12 col-sm-12 col-xs-12">
                                     <p class="text-left">التخصص الدراسي:</p>
-                                    <input type="major" name="major" id="major" class="form-control">
+                                    <input type="text" name="major" id="major" class="form-control" required>
                                 </div>
 
 
@@ -424,11 +424,11 @@
                             <div class="row">
                                 <div class="form-group col-lg-6 col-md-12 col-sm-12 col-xs-12">
                                     <p class="text-left">مسمى وظيفي:</p>
-                                    <input type="job" name="job" id="job" class="form-control">
+                                    <input type="text" name="job" id="job" class="form-control" required>
                                 </div>
                                 <div class="form-group col-lg-6 col-md-12 col-sm-12 col-xs-12">
                                     <p class="text-left">سنوات الخبرة:</p>
-                                    <input type="number" name="experience" id="experience" class="form-control" value="0" size="2" maxlength="2" oninput="this.value = this.value.replace(/[^0-9]/g, '').replace(/(\..*?)\..*/g, '$1');">
+                                    <input type="number" name="experience" id="experience" class="form-control" value="0" size="2" maxlength="2" required oninput="this.value = this.value.replace(/[^0-9]/g, '').replace(/(\..*?)\..*/g, '$1');">
                                 </div>
 
                             </div>
@@ -466,7 +466,7 @@
 
                                 <div class="form-group col-lg-6 col-md-12 col-sm-12 col-xs-12">
                                     <p class="text-left">رقم الهاتف المحمول:</p>
-                                    <input type="mobile" name="mobile" id="mobile" class="form-control" oninput="this.value = this.value.replace(/[^0-9+]/g, '').replace(/(\..*?)\..*/g, '$1');">
+                                    <input type="text" name="mobile" id="mobile" class="form-control" required oninput="this.value = this.value.replace(/[^0-9+]/g, '').replace(/(\..*?)\..*/g, '$1');">
                                 </div>
 
                             </div>
@@ -554,7 +554,7 @@
 
                                 <div class="form-group col-lg-6 col-md-12 col-sm-12 col-xs-12">
                                     <p class="text-left">السعر بالساعة (ريال سعودي):</p>
-                                    <input type="rate" name="rate" id="rate" class="form-control" value="0" size="5" maxlength="5" oninput="this.value = this.value.replace(/[^0-9]/g, '').replace(/(\..*?)\..*/g, '$1');">
+                                    <input type="text" name="rate" id="rate" class="form-control" value="0" size="5" maxlength="5" required oninput="this.value = this.value.replace(/[^0-9]/g, '').replace(/(\..*?)\..*/g, '$1');">
                                 </div>
 
 
@@ -565,7 +565,7 @@
                             <div class="row">
                                 <div class="form-group col-12">
                                     <p class="text-left">معلومات عني:</p>
-                                    <textarea type="text" name="about_me" id="about_me" class="form-control"></textarea>
+                                    <textarea type="text" name="about_me" id="about_me" class="form-control" required></textarea>
                                 </div>
                             </div>
 
@@ -577,7 +577,7 @@
                                         <div class="custom-file">
                                             <!-- MAX_FILE_SIZE 4 MB -->
                                             <input type="hidden" name="MAX_FILE_SIZE" value="4096000" />
-                                            <input type="file" id="cv_file" name="cv_file" accept=".pdf" class="hidden">
+                                            <input type="file" id="cv_file" name="cv_file" accept=".pdf" class="hidden" required>
                                             <label for="cv_file"></label>
                                         </div>
                                     </div>
