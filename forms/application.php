@@ -5,6 +5,44 @@ error_reporting(E_ALL);
 
 require('../administration/includes/db_config.php');
 
+// reCAPTCHA verification
+$recaptcha_secret = '6LfpX3gsAAAAAP_yQAToP3KckDF-6pnF9S1X_SBI';
+$recaptcha_response = isset($_POST['g-recaptcha-response']) ? $_POST['g-recaptcha-response'] : '';
+
+if (empty($recaptcha_response)) {
+    header('Location: ../index.php?success=0&error=captcha');
+    exit;
+}
+
+$verify_url = 'https://www.google.com/recaptcha/api/siteverify';
+$verify_data = array(
+    'secret' => $recaptcha_secret,
+    'response' => $recaptcha_response,
+    'remoteip' => $_SERVER['REMOTE_ADDR']
+);
+
+$options = array(
+    'http' => array(
+        'header' => "Content-type: application/x-www-form-urlencoded\r\n",
+        'method' => 'POST',
+        'content' => http_build_query($verify_data)
+    )
+);
+$context = stream_context_create($options);
+$verify_result = file_get_contents($verify_url, false, $context);
+$response_data = json_decode($verify_result);
+
+if (!$response_data->success) {
+    header('Location: ../index.php?success=0&error=captcha');
+    exit;
+}
+
+// Email validation
+if (!filter_var($_POST['user_email'], FILTER_VALIDATE_EMAIL)) {
+    header('Location: ../index.php?success=0&error=email');
+    exit;
+}
+
 $stmt_str = '';
 try {
 

@@ -358,6 +358,7 @@
                             </div>
                             <div class="col-lg-12 text-center">
                                 <div id="success"></div>
+                                <div class="g-recaptcha" data-sitekey="6LfpX3gsAAAAAIuvlUFb6ffPKN-a4qV9BumbvHUP"></div>
                                 <input name="btn_submit_message" type="submit" class="btn btn-outline-light btn-xl text-uppercase">
                             </div>
                         </form>
@@ -605,6 +606,7 @@
                     </div> -->
 
                                 <div class="col-lg-6 col-md-12 col-sm-12 col-xs-12">
+                                    <div class="g-recaptcha" data-sitekey="6LfpX3gsAAAAAIuvlUFb6ffPKN-a4qV9BumbvHUP"></div>
                                     <br />
                                     <button type="submit" name="submit" class="btn btn-primary btn-block col-3" style="float: right;">Submit</button>
                                 </div>
@@ -680,6 +682,7 @@
 
         <a id="back-to-top" href="#" class="btn btn-info btn-lg back-to-top" role="button" data-toggle="tooltip" data-placement="left"><span class="fa fa-arrow-up"></span></a>
 
+        <script src="https://www.google.com/recaptcha/api.js" async defer></script>
         <script src="assets/jquery/jquery.min.js"></script>
         <script src="assets/bootstrap/js/bootstrap.bundle.min.js"></script>
 
@@ -751,6 +754,14 @@
 
                     if ($.trim($("#user_email").val()) === "") {
                         alert('Please enter Email address.');
+                        return false;
+                    }
+
+                    // Email validation
+                    var email = $("#user_email").val();
+                    var emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+                    if (!emailRegex.test(email)) {
+                        alert('Please provide a valid email address.');
                         return false;
                     }
 
@@ -832,6 +843,37 @@
 
         function sendForm()
         {
+            // reCAPTCHA verification
+            $recaptcha_secret = '6LfpX3gsAAAAAP_yQAToP3KckDF-6pnF9S1X_SBI';
+            $recaptcha_response = isset($_POST['g-recaptcha-response']) ? $_POST['g-recaptcha-response'] : '';
+            
+            if (empty($recaptcha_response)) {
+                echo ("<SCRIPT LANGUAGE='JavaScript'> alert('Please complete the reCAPTCHA verification.'); </SCRIPT>");
+                return;
+            }
+            
+            $verify_url = 'https://www.google.com/recaptcha/api/siteverify';
+            $verify_data = array(
+                'secret' => $recaptcha_secret,
+                'response' => $recaptcha_response,
+                'remoteip' => $_SERVER['REMOTE_ADDR']
+            );
+            
+            $options = array(
+                'http' => array(
+                    'header' => "Content-type: application/x-www-form-urlencoded\r\n",
+                    'method' => 'POST',
+                    'content' => http_build_query($verify_data)
+                )
+            );
+            $context = stream_context_create($options);
+            $verify_result = file_get_contents($verify_url, false, $context);
+            $response_data = json_decode($verify_result);
+            
+            if (!$response_data->success) {
+                echo ("<SCRIPT LANGUAGE='JavaScript'> alert('reCAPTCHA verification failed. Please try again.'); </SCRIPT>");
+                return;
+            }
 
             $strHttp = 'http:';
             $strCom = '.com';
@@ -869,6 +911,10 @@
                 //echo "Alpha 3";
                 //show_error('All fields must be provided in order to send the message');
                 echo ("<SCRIPT LANGUAGE='JavaScript'> alert('All fields must be provided in order to send the message'); </SCRIPT>");
+            } elseif (!filter_var($_POST['your-email'], FILTER_VALIDATE_EMAIL)) {
+                //echo "Alpha 3.5";
+                //show_error('Please provide a valid email address');
+                echo ("<SCRIPT LANGUAGE='JavaScript'> alert('Please provide a valid email address'); </SCRIPT>");
             } else {
 
                 //echo "Alpha 3.10";
