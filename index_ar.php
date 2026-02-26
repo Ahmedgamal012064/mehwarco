@@ -683,6 +683,7 @@
 
         <a id="back-to-top" href="#" class="btn btn-info btn-lg back-to-top" role="button" data-toggle="tooltip" data-placement="left"><span class="fa fa-arrow-up"></span></a>
 
+        <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
         <script src="https://www.google.com/recaptcha/api.js?render=6LfpX3gsAAAAAIuvlUFb6ffPKN-a4qV9BumbvHUP"></script>
         <script src="assets/jquery/jquery.min.js"></script>
         <script src="assets/bootstrap/js/bootstrap.bundle.min.js"></script>
@@ -754,7 +755,7 @@
                 $('#frm_join').submit(function() {
 
                     if ($.trim($("#user_email").val()) === "") {
-                        alert('يرجى إدخال عنوان البريد الإلكتروني.');
+                        Swal.fire({icon:'error',title:'خطأ',text:'يرجى إدخال عنوان البريد الإلكتروني.',confirmButtonColor:'#D2AA5A'});
                         return false;
                     }
 
@@ -762,72 +763,72 @@
                     var email = $("#user_email").val();
                     var emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
                     if (!emailRegex.test(email)) {
-                        alert('يرجى تقديم عنوان بريد إلكتروني صحيح.');
+                        Swal.fire({icon:'error',title:'خطأ',text:'يرجى تقديم عنوان بريد إلكتروني صحيح.',confirmButtonColor:'#D2AA5A'});
                         return false;
                     }
 
                     if ($.trim($("#image_file").val()) === "") {
-                        alert('Please select a personal image.');
+                        Swal.fire({icon:'error',title:'خطأ',text:'يرجى اختيار صورة شخصية.',confirmButtonColor:'#D2AA5A'});
                         return false;
                     }
 
                     if ($.trim($("#full_name").val()) === "") {
-                        alert('Please enter full name.');
+                        Swal.fire({icon:'error',title:'خطأ',text:'يرجى إدخال الاسم الكامل.',confirmButtonColor:'#D2AA5A'});
                         return false;
                     }
 
                     if ($.trim($("#major").val()) === "") {
-                        alert('Please enter major of study.');
+                        Swal.fire({icon:'error',title:'خطأ',text:'يرجى إدخال التخصص الدراسي.',confirmButtonColor:'#D2AA5A'});
                         return false;
                     }
 
                     if ($.trim($("#job").val()) === "") {
-                        alert('Please enter job.');
+                        Swal.fire({icon:'error',title:'خطأ',text:'يرجى إدخال المسمى الوظيفي.',confirmButtonColor:'#D2AA5A'});
                         return false;
                     }
 
                     if ($.trim($("#experience").val()) === "") {
-                        alert('Please enter years of experience.');
+                        Swal.fire({icon:'error',title:'خطأ',text:'يرجى إدخال سنوات الخبرة.',confirmButtonColor:'#D2AA5A'});
                         return false;
                     }
 
                     if ($.trim($("#country").val()) === "") {
-                        alert('Please select country of residence.');
+                        Swal.fire({icon:'error',title:'خطأ',text:'يرجى اختيار بلد الإقامة.',confirmButtonColor:'#D2AA5A'});
                         return false;
                     }
 
                     if ($.trim($("#mobile").val()) === "") {
-                        alert('Please enter mobile number.');
+                        Swal.fire({icon:'error',title:'خطأ',text:'يرجى إدخال رقم الهاتف المحمول.',confirmButtonColor:'#D2AA5A'});
                         return false;
                     }
 
                     if ($.trim($("#select_specialty").val()) === "") {
-                        alert('Please select at least one specialty.');
+                        Swal.fire({icon:'error',title:'خطأ',text:'يرجى اختيار تخصص واحد على الأقل.',confirmButtonColor:'#D2AA5A'});
                         return false;
                     }
 
                     if ($.trim($("#select_regions").val()) === "") {
-                        alert('Please select at least one region.');
+                        Swal.fire({icon:'error',title:'خطأ',text:'يرجى اختيار منطقة واحدة على الأقل.',confirmButtonColor:'#D2AA5A'});
                         return false;
                     }
 
                     if ($.trim($("#select_software").val()) === "") {
-                        alert('Please select at least one software system.');
+                        Swal.fire({icon:'error',title:'خطأ',text:'يرجى اختيار نظام برمجي واحد على الأقل.',confirmButtonColor:'#D2AA5A'});
                         return false;
                     }
 
                     if ($.trim($("#rate").val()) === "") {
-                        alert('Please enter the hourly rate in SAR.');
+                        Swal.fire({icon:'error',title:'خطأ',text:'يرجى إدخال السعر بالساعة بالريال.',confirmButtonColor:'#D2AA5A'});
                         return false;
                     }
 
                     if ($.trim($("#about_me").val()) === "") {
-                        alert('Please enter about me text.');
+                        Swal.fire({icon:'error',title:'خطأ',text:'يرجى إدخال نص معلومات عني.',confirmButtonColor:'#D2AA5A'});
                         return false;
                     }
 
                     if ($.trim($("#cv_file").val()) === "") {
-                        alert('Please choose a CV file in PDF format.');
+                        Swal.fire({icon:'error',title:'خطأ',text:'يرجى اختيار ملف السيرة الذاتية بصيغة PDF.',confirmButtonColor:'#D2AA5A'});
                         return false;
                     }
                 });
@@ -872,7 +873,7 @@
             $recaptcha_response = isset($_POST['g-recaptcha-response']) ? $_POST['g-recaptcha-response'] : '';
             
             if (empty($recaptcha_response)) {
-                echo '<script>document.getElementById("contact-message").innerHTML = "<div class=\'alert alert-danger\' style=\'margin-top:15px;border-radius:10px;\'>يرجى إكمال التحقق من reCAPTCHA.</div>";</script>';
+                echo '<script>Swal.fire({icon:"error",title:"خطأ",text:"يرجى إكمال التحقق من reCAPTCHA.",confirmButtonColor:"#D2AA5A"});</script>';
                 return;
             }
             
@@ -895,7 +896,7 @@
             $response_data = json_decode($verify_result);
             
             if (!$response_data->success || $response_data->score < 0.5) {
-                echo '<script>document.getElementById("contact-message").innerHTML = "<div class=\'alert alert-danger\' style=\'margin-top:15px;border-radius:10px;\'>فشل التحقق من reCAPTCHA. يرجى المحاولة مرة أخرى.</div>";</script>';
+                echo '<script>Swal.fire({icon:"error",title:"خطأ",text:"فشل التحقق من reCAPTCHA. يرجى المحاولة مرة أخرى.",confirmButtonColor:"#D2AA5A"});</script>';
                 return;
             }
 
@@ -925,7 +926,7 @@
                 //$curl.="#contact";
                 //echo "Alpha 2"; 
                 //show_error('Links cannot be sent through the contact form');
-                echo '<script>document.getElementById("contact-message").innerHTML = "<div class=\'alert alert-danger\' style=\'margin-top:15px;border-radius:10px;\'>لا يمكن إرسال الروابط من خلال نموذج الاتصال.</div>";</script>';
+                echo '<script>Swal.fire({icon:"error",title:"خطأ",text:"لا يمكن إرسال الروابط من خلال نموذج الاتصال.",confirmButtonColor:"#D2AA5A"});</script>';
             } elseif (
                 strlen(str_replace(" ", "", strtolower($_POST['your-message']))) < 1 ||
                 strlen(str_replace(" ", "", strtolower($_POST['your-mobile']))) < 1 ||
@@ -934,11 +935,11 @@
             ) {
                 //echo "Alpha 3";
                 //show_error('All fields must be provided in order to send the message');
-                echo '<script>document.getElementById("contact-message").innerHTML = "<div class=\'alert alert-danger\' style=\'margin-top:15px;border-radius:10px;\'>يجب ملء جميع الحقول لإرسال الرسالة.</div>";</script>';
+                echo '<script>Swal.fire({icon:"error",title:"خطأ",text:"يجب ملء جميع الحقول لإرسال الرسالة.",confirmButtonColor:"#D2AA5A"});</script>';
             } elseif (!filter_var($_POST['your-email'], FILTER_VALIDATE_EMAIL)) {
                 //echo "Alpha 3.5";
                 //show_error('Please provide a valid email address');
-                echo '<script>document.getElementById("contact-message").innerHTML = "<div class=\'alert alert-danger\' style=\'margin-top:15px;border-radius:10px;\'>يرجى تقديم عنوان بريد إلكتروني صحيح.</div>";</script>';
+                echo '<script>Swal.fire({icon:"error",title:"خطأ",text:"يرجى تقديم عنوان بريد إلكتروني صحيح.",confirmButtonColor:"#D2AA5A"});</script>';
             } else {
 
                 //echo "Alpha 3.10";
@@ -952,9 +953,9 @@
                 $send_result = send_mail("contact@mehwarco.com", $subject, $table);
 
                 if (strpos($send_result, 'Message sent') !== false) {
-                    echo '<script>document.getElementById("contact-message").innerHTML = "<div class=\'alert alert-success\' style=\'margin-top:15px;border-radius:10px;font-size:16px;\'><i class=\'fas fa-check-circle\'></i> تم إرسال رسالتك بنجاح! سنتواصل معك قريباً.</div>"; document.querySelector(\'#contact form\').reset();</script>';
+                    echo '<script>Swal.fire({icon:"success",title:"تم بنجاح!",text:"تم إرسال رسالتك بنجاح! سنتواصل معك قريباً.",confirmButtonColor:"#D2AA5A"}).then(function(){document.querySelector("#contact form").reset();});</script>';
                 } else {
-                    echo '<script>document.getElementById("contact-message").innerHTML = "<div class=\'alert alert-danger\' style=\'margin-top:15px;border-radius:10px;font-size:16px;\'><i class=\'fas fa-times-circle\'></i> فشل إرسال الرسالة. يرجى المحاولة مرة أخرى لاحقاً.</div>";</script>';
+                    echo '<script>Swal.fire({icon:"error",title:"فشل",text:"فشل إرسال الرسالة. يرجى المحاولة مرة أخرى لاحقاً.",confirmButtonColor:"#D2AA5A"});</script>';
                 }
             }
         }
@@ -1008,9 +1009,9 @@
         <?php
         if (isset($_GET['success'])) {
             if ($_GET['success'] == 1) {
-                echo '<script>alert("Data submitted successfully")</script>';
+                echo '<script>Swal.fire({icon:"success",title:"تم بنجاح!",text:"تم إرسال طلبك بنجاح!",confirmButtonColor:"#D2AA5A"});</script>';
             } else {
-                echo '<script>alert("Data failed to submit")</script>';
+                echo '<script>Swal.fire({icon:"error",title:"فشل",text:"فشل إرسال البيانات. يرجى المحاولة مرة أخرى.",confirmButtonColor:"#D2AA5A"});</script>';
             }
         }
         ?>

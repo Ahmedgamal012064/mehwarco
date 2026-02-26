@@ -682,6 +682,7 @@
 
         <a id="back-to-top" href="#" class="btn btn-info btn-lg back-to-top" role="button" data-toggle="tooltip" data-placement="left"><span class="fa fa-arrow-up"></span></a>
 
+        <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
         <script src="https://www.google.com/recaptcha/api.js?render=6LfpX3gsAAAAAIuvlUFb6ffPKN-a4qV9BumbvHUP"></script>
         <script src="assets/jquery/jquery.min.js"></script>
         <script src="assets/bootstrap/js/bootstrap.bundle.min.js"></script>
@@ -753,7 +754,7 @@
                 $('#frm_join').submit(function() {
 
                     if ($.trim($("#user_email").val()) === "") {
-                        alert('Please enter Email address.');
+                        Swal.fire({icon:'error',title:'Error',text:'Please enter Email address.',confirmButtonColor:'#D2AA5A'});
                         return false;
                     }
 
@@ -761,72 +762,72 @@
                     var email = $("#user_email").val();
                     var emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
                     if (!emailRegex.test(email)) {
-                        alert('Please provide a valid email address.');
+                        Swal.fire({icon:'error',title:'Error',text:'Please provide a valid email address.',confirmButtonColor:'#D2AA5A'});
                         return false;
                     }
 
                     if ($.trim($("#image_file").val()) === "") {
-                        alert('Please select a personal image.');
+                        Swal.fire({icon:'error',title:'Error',text:'Please select a personal image.',confirmButtonColor:'#D2AA5A'});
                         return false;
                     }
 
                     if ($.trim($("#full_name").val()) === "") {
-                        alert('Please enter full name.');
+                        Swal.fire({icon:'error',title:'Error',text:'Please enter full name.',confirmButtonColor:'#D2AA5A'});
                         return false;
                     }
 
                     if ($.trim($("#major").val()) === "") {
-                        alert('Please enter major of study.');
+                        Swal.fire({icon:'error',title:'Error',text:'Please enter major of study.',confirmButtonColor:'#D2AA5A'});
                         return false;
                     }
 
                     if ($.trim($("#job").val()) === "") {
-                        alert('Please enter job.');
+                        Swal.fire({icon:'error',title:'Error',text:'Please enter job title.',confirmButtonColor:'#D2AA5A'});
                         return false;
                     }
 
                     if ($.trim($("#experience").val()) === "") {
-                        alert('Please enter years of experience.');
+                        Swal.fire({icon:'error',title:'Error',text:'Please enter years of experience.',confirmButtonColor:'#D2AA5A'});
                         return false;
                     }
 
                     if ($.trim($("#country").val()) === "") {
-                        alert('Please select country of residence.');
+                        Swal.fire({icon:'error',title:'Error',text:'Please select country of residence.',confirmButtonColor:'#D2AA5A'});
                         return false;
                     }
 
                     if ($.trim($("#mobile").val()) === "") {
-                        alert('Please enter mobile number.');
+                        Swal.fire({icon:'error',title:'Error',text:'Please enter mobile number.',confirmButtonColor:'#D2AA5A'});
                         return false;
                     }
 
                     if ($.trim($("#select_specialty").val()) === "") {
-                        alert('Please select at least one specialty.');
+                        Swal.fire({icon:'error',title:'Error',text:'Please select at least one specialty.',confirmButtonColor:'#D2AA5A'});
                         return false;
                     }
 
                     if ($.trim($("#select_regions").val()) === "") {
-                        alert('Please select at least one region.');
+                        Swal.fire({icon:'error',title:'Error',text:'Please select at least one region.',confirmButtonColor:'#D2AA5A'});
                         return false;
                     }
 
                     if ($.trim($("#select_software").val()) === "") {
-                        alert('Please select at least one software system.');
+                        Swal.fire({icon:'error',title:'Error',text:'Please select at least one software system.',confirmButtonColor:'#D2AA5A'});
                         return false;
                     }
 
                     if ($.trim($("#rate").val()) === "") {
-                        alert('Please enter the hourly rate in SAR.');
+                        Swal.fire({icon:'error',title:'Error',text:'Please enter the hourly rate in SAR.',confirmButtonColor:'#D2AA5A'});
                         return false;
                     }
 
                     if ($.trim($("#about_me").val()) === "") {
-                        alert('Please enter about me text.');
+                        Swal.fire({icon:'error',title:'Error',text:'Please enter about me text.',confirmButtonColor:'#D2AA5A'});
                         return false;
                     }
 
                     if ($.trim($("#cv_file").val()) === "") {
-                        alert('Please choose a CV file in PDF format.');
+                        Swal.fire({icon:'error',title:'Error',text:'Please choose a CV file in PDF format.',confirmButtonColor:'#D2AA5A'});
                         return false;
                     }
                 });
@@ -874,7 +875,7 @@
             $recaptcha_response = isset($_POST['g-recaptcha-response']) ? $_POST['g-recaptcha-response'] : '';
             
             if (empty($recaptcha_response)) {
-                echo '<script>document.getElementById("contact-message").innerHTML = "<div class=\'alert alert-danger\' style=\'margin-top:15px;border-radius:10px;\'>Please complete the reCAPTCHA verification.</div>";</script>';
+                echo '<script>Swal.fire({icon:"error",title:"Error",text:"Please complete the reCAPTCHA verification.",confirmButtonColor:"#D2AA5A"});</script>';
                 return;
             }
             
@@ -897,7 +898,7 @@
             $response_data = json_decode($verify_result);
             
             if (!$response_data->success || $response_data->score < 0.5) {
-                echo '<script>document.getElementById("contact-message").innerHTML = "<div class=\'alert alert-danger\' style=\'margin-top:15px;border-radius:10px;\'>reCAPTCHA verification failed. Please try again.</div>";</script>';
+                echo '<script>Swal.fire({icon:"error",title:"Error",text:"reCAPTCHA verification failed. Please try again.",confirmButtonColor:"#D2AA5A"});</script>';
                 return;
             }
 
@@ -927,7 +928,7 @@
                 //$curl.="#contact";
                 //echo "Alpha 2"; 
                 //show_error('Links cannot be sent through the contact form');
-                echo '<script>document.getElementById("contact-message").innerHTML = "<div class=\'alert alert-danger\' style=\'margin-top:15px;border-radius:10px;\'>Links cannot be sent through the contact form.</div>";</script>';
+                echo '<script>Swal.fire({icon:"error",title:"Error",text:"Links cannot be sent through the contact form.",confirmButtonColor:"#D2AA5A"});</script>';
             } elseif (
                 strlen(str_replace(" ", "", strtolower($_POST['your-message']))) < 1 ||
                 strlen(str_replace(" ", "", strtolower($_POST['your-mobile']))) < 1 ||
@@ -936,11 +937,11 @@
             ) {
                 //echo "Alpha 3";
                 //show_error('All fields must be provided in order to send the message');
-                echo '<script>document.getElementById("contact-message").innerHTML = "<div class=\'alert alert-danger\' style=\'margin-top:15px;border-radius:10px;\'>All fields must be provided in order to send the message.</div>";</script>';
+                echo '<script>Swal.fire({icon:"error",title:"Error",text:"All fields must be provided in order to send the message.",confirmButtonColor:"#D2AA5A"});</script>';
             } elseif (!filter_var($_POST['your-email'], FILTER_VALIDATE_EMAIL)) {
                 //echo "Alpha 3.5";
                 //show_error('Please provide a valid email address');
-                echo '<script>document.getElementById("contact-message").innerHTML = "<div class=\'alert alert-danger\' style=\'margin-top:15px;border-radius:10px;\'>Please provide a valid email address.</div>";</script>';
+                echo '<script>Swal.fire({icon:"error",title:"Error",text:"Please provide a valid email address.",confirmButtonColor:"#D2AA5A"});</script>';
             } else {
 
                 //echo "Alpha 3.10";
@@ -954,9 +955,9 @@
                 $send_result = send_mail("contact@mehwarco.com", $subject, $table);
 
                 if (strpos($send_result, 'Message sent') !== false) {
-                    echo '<script>document.getElementById("contact-message").innerHTML = "<div class=\'alert alert-success\' style=\'margin-top:15px;border-radius:10px;font-size:16px;\'><i class=\'fas fa-check-circle\'></i> Your message has been sent successfully! We will get back to you soon.</div>"; document.querySelector(\'#contact form\').reset();</script>';
+                    echo '<script>Swal.fire({icon:"success",title:"Success!",text:"Your message has been sent successfully! We will get back to you soon.",confirmButtonColor:"#D2AA5A"}).then(function(){document.querySelector("#contact form").reset();});</script>';
                 } else {
-                    echo '<script>document.getElementById("contact-message").innerHTML = "<div class=\'alert alert-danger\' style=\'margin-top:15px;border-radius:10px;font-size:16px;\'><i class=\'fas fa-times-circle\'></i> Failed to send message. Please try again later.</div>";</script>';
+                    echo '<script>Swal.fire({icon:"error",title:"Failed",text:"Failed to send message. Please try again later.",confirmButtonColor:"#D2AA5A"});</script>';
                 }
             }
         }
@@ -1009,9 +1010,9 @@
         <?php
         if (isset($_GET['success'])) {
             if ($_GET['success'] == 1) {
-                echo '<script>alert("Data submitted successfully")</script>';
+                echo '<script>Swal.fire({icon:"success",title:"Success!",text:"Your application has been submitted successfully!",confirmButtonColor:"#D2AA5A"});</script>';
             } else {
-                echo '<script>alert("Data failed to submit")</script>';
+                echo '<script>Swal.fire({icon:"error",title:"Failed",text:"Data failed to submit. Please try again.",confirmButtonColor:"#D2AA5A"});</script>';
             }
         }
         ?>
