@@ -594,7 +594,7 @@
                                         <div class="custom-file">
                                             <!-- MAX_FILE_SIZE 4 MB -->
                                             <input type="hidden" name="MAX_FILE_SIZE" value="4096000" />
-                                            <input type="file" id="cv_file" name="cv_file" accept=".pdf" class="hidden">
+                                            <input type="file" id="cv_file" name="cv_file" accept=".pdf" class="hidden" required>
                                             <label for="cv_file"></label>
                                         </div>
                                     </div>
