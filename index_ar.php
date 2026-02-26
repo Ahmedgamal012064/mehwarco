@@ -340,7 +340,7 @@
                                 </div>
                             </div>
                             <div class="col-lg-12 text-center">
-                                <div id="success"></div>
+                                <div id="contact-message"></div>
                                 <input type="hidden" name="g-recaptcha-response" id="contact-recaptcha-response">
                                 <input name="btn_submit_message" type="submit" id="contact-submit-btn" class="btn btn-outline-light btn-xl text-uppercase">
                             </div>
@@ -872,7 +872,7 @@
             $recaptcha_response = isset($_POST['g-recaptcha-response']) ? $_POST['g-recaptcha-response'] : '';
             
             if (empty($recaptcha_response)) {
-                echo ("<SCRIPT LANGUAGE='JavaScript'> alert('يرجى إكمال التحقق من reCAPTCHA.'); </SCRIPT>");
+                echo '<script>document.getElementById("contact-message").innerHTML = "<div class=\'alert alert-danger\' style=\'margin-top:15px;border-radius:10px;\'>يرجى إكمال التحقق من reCAPTCHA.</div>";</script>';
                 return;
             }
             
@@ -895,7 +895,7 @@
             $response_data = json_decode($verify_result);
             
             if (!$response_data->success || $response_data->score < 0.5) {
-                echo ("<SCRIPT LANGUAGE='JavaScript'> alert('فشل التحقق من reCAPTCHA. يرجى المحاولة مرة أخرى.'); </SCRIPT>");
+                echo '<script>document.getElementById("contact-message").innerHTML = "<div class=\'alert alert-danger\' style=\'margin-top:15px;border-radius:10px;\'>فشل التحقق من reCAPTCHA. يرجى المحاولة مرة أخرى.</div>";</script>';
                 return;
             }
 
@@ -925,7 +925,7 @@
                 //$curl.="#contact";
                 //echo "Alpha 2"; 
                 //show_error('Links cannot be sent through the contact form');
-                echo ("<SCRIPT LANGUAGE='JavaScript'> alert('Links cannot be sent through the contact form'); </SCRIPT>");
+                echo '<script>document.getElementById("contact-message").innerHTML = "<div class=\'alert alert-danger\' style=\'margin-top:15px;border-radius:10px;\'>لا يمكن إرسال الروابط من خلال نموذج الاتصال.</div>";</script>';
             } elseif (
                 strlen(str_replace(" ", "", strtolower($_POST['your-message']))) < 1 ||
                 strlen(str_replace(" ", "", strtolower($_POST['your-mobile']))) < 1 ||
@@ -934,11 +934,11 @@
             ) {
                 //echo "Alpha 3";
                 //show_error('All fields must be provided in order to send the message');
-                echo ("<SCRIPT LANGUAGE='JavaScript'> alert('All fields must be provided in order to send the message'); </SCRIPT>");
+                echo '<script>document.getElementById("contact-message").innerHTML = "<div class=\'alert alert-danger\' style=\'margin-top:15px;border-radius:10px;\'>يجب ملء جميع الحقول لإرسال الرسالة.</div>";</script>';
             } elseif (!filter_var($_POST['your-email'], FILTER_VALIDATE_EMAIL)) {
                 //echo "Alpha 3.5";
                 //show_error('Please provide a valid email address');
-                echo ("<SCRIPT LANGUAGE='JavaScript'> alert('يرجى تقديم عنوان بريد إلكتروني صحيح'); </SCRIPT>");
+                echo '<script>document.getElementById("contact-message").innerHTML = "<div class=\'alert alert-danger\' style=\'margin-top:15px;border-radius:10px;\'>يرجى تقديم عنوان بريد إلكتروني صحيح.</div>";</script>';
             } else {
 
                 //echo "Alpha 3.10";
@@ -950,11 +950,12 @@
                 $table .= "</table border='2'>";
                 $subject = "A message from Mehwarco Website";
                 $send_result = send_mail("contact@mehwarco.com", $subject, $table);
-                //echo "Alpha 4";
-                //print_r($send_result);
 
-                header("Location:" . $curl);
-                die();
+                if (strpos($send_result, 'Message sent') !== false) {
+                    echo '<script>document.getElementById("contact-message").innerHTML = "<div class=\'alert alert-success\' style=\'margin-top:15px;border-radius:10px;font-size:16px;\'><i class=\'fas fa-check-circle\'></i> تم إرسال رسالتك بنجاح! سنتواصل معك قريباً.</div>"; document.querySelector(\'#contact form\').reset();</script>';
+                } else {
+                    echo '<script>document.getElementById("contact-message").innerHTML = "<div class=\'alert alert-danger\' style=\'margin-top:15px;border-radius:10px;font-size:16px;\'><i class=\'fas fa-times-circle\'></i> فشل إرسال الرسالة. يرجى المحاولة مرة أخرى لاحقاً.</div>";</script>';
+                }
             }
         }
 
@@ -998,7 +999,6 @@
             } else {
                 //echo "Beta 6";
                 //file_put_contents("res.txt", $response);
-                echo ("<SCRIPT LANGUAGE='JavaScript'> alert('Message sent successfully'); </SCRIPT>");
                 return $response;
             }
         }
