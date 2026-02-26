@@ -862,6 +862,7 @@
         </script>
 
         <?php
+        $swal_message = '';
 
         if (isset($_POST['btn_submit_message'])) {
             sendForm();
@@ -875,7 +876,7 @@
             $recaptcha_response = isset($_POST['g-recaptcha-response']) ? $_POST['g-recaptcha-response'] : '';
             
             if (empty($recaptcha_response)) {
-                echo '<script>Swal.fire({icon:"error",title:"Error",text:"Please complete the reCAPTCHA verification.",confirmButtonColor:"#D2AA5A"});</script>';
+                $GLOBALS['swal_message'] = 'Swal.fire({icon:"error",title:"Error",text:"Please complete the reCAPTCHA verification.",confirmButtonColor:"#D2AA5A"});';
                 return;
             }
             
@@ -898,7 +899,7 @@
             $response_data = json_decode($verify_result);
             
             if (!$response_data->success || $response_data->score < 0.5) {
-                echo '<script>Swal.fire({icon:"error",title:"Error",text:"reCAPTCHA verification failed. Please try again.",confirmButtonColor:"#D2AA5A"});</script>';
+                $GLOBALS['swal_message'] = 'Swal.fire({icon:"error",title:"Error",text:"reCAPTCHA verification failed. Please try again.",confirmButtonColor:"#D2AA5A"});';
                 return;
             }
 
@@ -928,7 +929,7 @@
                 //$curl.="#contact";
                 //echo "Alpha 2"; 
                 //show_error('Links cannot be sent through the contact form');
-                echo '<script>Swal.fire({icon:"error",title:"Error",text:"Links cannot be sent through the contact form.",confirmButtonColor:"#D2AA5A"});</script>';
+                $GLOBALS['swal_message'] = 'Swal.fire({icon:"error",title:"Error",text:"Links cannot be sent through the contact form.",confirmButtonColor:"#D2AA5A"});';
             } elseif (
                 strlen(str_replace(" ", "", strtolower($_POST['your-message']))) < 1 ||
                 strlen(str_replace(" ", "", strtolower($_POST['your-mobile']))) < 1 ||
@@ -937,11 +938,11 @@
             ) {
                 //echo "Alpha 3";
                 //show_error('All fields must be provided in order to send the message');
-                echo '<script>Swal.fire({icon:"error",title:"Error",text:"All fields must be provided in order to send the message.",confirmButtonColor:"#D2AA5A"});</script>';
+                $GLOBALS['swal_message'] = 'Swal.fire({icon:"error",title:"Error",text:"All fields must be provided in order to send the message.",confirmButtonColor:"#D2AA5A"});';
             } elseif (!filter_var($_POST['your-email'], FILTER_VALIDATE_EMAIL)) {
                 //echo "Alpha 3.5";
                 //show_error('Please provide a valid email address');
-                echo '<script>Swal.fire({icon:"error",title:"Error",text:"Please provide a valid email address.",confirmButtonColor:"#D2AA5A"});</script>';
+                $GLOBALS['swal_message'] = 'Swal.fire({icon:"error",title:"Error",text:"Please provide a valid email address.",confirmButtonColor:"#D2AA5A"});';
             } else {
 
                 //echo "Alpha 3.10";
@@ -955,9 +956,9 @@
                 $send_result = send_mail("contact@mehwarco.com", $subject, $table);
 
                 if (strpos($send_result, 'Message sent') !== false) {
-                    echo '<script>Swal.fire({icon:"success",title:"Success!",text:"Your message has been sent successfully! We will get back to you soon.",confirmButtonColor:"#D2AA5A"}).then(function(){document.querySelector("#contact form").reset();});</script>';
+                    $GLOBALS['swal_message'] = 'Swal.fire({icon:"success",title:"Success!",text:"Your message has been sent successfully! We will get back to you soon.",confirmButtonColor:"#D2AA5A"}).then(function(){document.querySelector("#contact form").reset();});';
                 } else {
-                    echo '<script>Swal.fire({icon:"error",title:"Failed",text:"Failed to send message. Please try again later.",confirmButtonColor:"#D2AA5A"});</script>';
+                    $GLOBALS['swal_message'] = 'Swal.fire({icon:"error",title:"Failed",text:"Failed to send message. Please try again later.",confirmButtonColor:"#D2AA5A"});';
                 }
             }
         }
@@ -1010,10 +1011,13 @@
         <?php
         if (isset($_GET['success'])) {
             if ($_GET['success'] == 1) {
-                echo '<script>Swal.fire({icon:"success",title:"Success!",text:"Your application has been submitted successfully!",confirmButtonColor:"#D2AA5A"});</script>';
+                $swal_message = 'Swal.fire({icon:"success",title:"Success!",text:"Your application has been submitted successfully!",confirmButtonColor:"#D2AA5A"});';
             } else {
-                echo '<script>Swal.fire({icon:"error",title:"Failed",text:"Data failed to submit. Please try again.",confirmButtonColor:"#D2AA5A"});</script>';
+                $swal_message = 'Swal.fire({icon:"error",title:"Failed",text:"Data failed to submit. Please try again.",confirmButtonColor:"#D2AA5A"});';
             }
+        }
+        if (!empty($swal_message)) {
+            echo '<script>document.addEventListener("DOMContentLoaded", function(){ ' . $swal_message . ' });</script>';
         }
         ?>
 

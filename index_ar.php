@@ -860,6 +860,7 @@
         </script>
 
         <?php
+        $swal_message = '';
 
         if (isset($_POST['btn_submit_message'])) {
             sendForm();
@@ -873,7 +874,7 @@
             $recaptcha_response = isset($_POST['g-recaptcha-response']) ? $_POST['g-recaptcha-response'] : '';
             
             if (empty($recaptcha_response)) {
-                echo '<script>Swal.fire({icon:"error",title:"خطأ",text:"يرجى إكمال التحقق من reCAPTCHA.",confirmButtonColor:"#D2AA5A"});</script>';
+                $GLOBALS['swal_message'] = 'Swal.fire({icon:"error",title:"خطأ",text:"يرجى إكمال التحقق من reCAPTCHA.",confirmButtonColor:"#D2AA5A"});';
                 return;
             }
             
@@ -896,7 +897,7 @@
             $response_data = json_decode($verify_result);
             
             if (!$response_data->success || $response_data->score < 0.5) {
-                echo '<script>Swal.fire({icon:"error",title:"خطأ",text:"فشل التحقق من reCAPTCHA. يرجى المحاولة مرة أخرى.",confirmButtonColor:"#D2AA5A"});</script>';
+                $GLOBALS['swal_message'] = 'Swal.fire({icon:"error",title:"خطأ",text:"فشل التحقق من reCAPTCHA. يرجى المحاولة مرة أخرى.",confirmButtonColor:"#D2AA5A"});';
                 return;
             }
 
@@ -926,7 +927,7 @@
                 //$curl.="#contact";
                 //echo "Alpha 2"; 
                 //show_error('Links cannot be sent through the contact form');
-                echo '<script>Swal.fire({icon:"error",title:"خطأ",text:"لا يمكن إرسال الروابط من خلال نموذج الاتصال.",confirmButtonColor:"#D2AA5A"});</script>';
+                $GLOBALS['swal_message'] = 'Swal.fire({icon:"error",title:"خطأ",text:"لا يمكن إرسال الروابط من خلال نموذج الاتصال.",confirmButtonColor:"#D2AA5A"});';
             } elseif (
                 strlen(str_replace(" ", "", strtolower($_POST['your-message']))) < 1 ||
                 strlen(str_replace(" ", "", strtolower($_POST['your-mobile']))) < 1 ||
@@ -935,11 +936,11 @@
             ) {
                 //echo "Alpha 3";
                 //show_error('All fields must be provided in order to send the message');
-                echo '<script>Swal.fire({icon:"error",title:"خطأ",text:"يجب ملء جميع الحقول لإرسال الرسالة.",confirmButtonColor:"#D2AA5A"});</script>';
+                $GLOBALS['swal_message'] = 'Swal.fire({icon:"error",title:"خطأ",text:"يجب ملء جميع الحقول لإرسال الرسالة.",confirmButtonColor:"#D2AA5A"});';
             } elseif (!filter_var($_POST['your-email'], FILTER_VALIDATE_EMAIL)) {
                 //echo "Alpha 3.5";
                 //show_error('Please provide a valid email address');
-                echo '<script>Swal.fire({icon:"error",title:"خطأ",text:"يرجى تقديم عنوان بريد إلكتروني صحيح.",confirmButtonColor:"#D2AA5A"});</script>';
+                $GLOBALS['swal_message'] = 'Swal.fire({icon:"error",title:"خطأ",text:"يرجى تقديم عنوان بريد إلكتروني صحيح.",confirmButtonColor:"#D2AA5A"});';
             } else {
 
                 //echo "Alpha 3.10";
@@ -953,9 +954,9 @@
                 $send_result = send_mail("contact@mehwarco.com", $subject, $table);
 
                 if (strpos($send_result, 'Message sent') !== false) {
-                    echo '<script>Swal.fire({icon:"success",title:"تم بنجاح!",text:"تم إرسال رسالتك بنجاح! سنتواصل معك قريباً.",confirmButtonColor:"#D2AA5A"}).then(function(){document.querySelector("#contact form").reset();});</script>';
+                    $GLOBALS['swal_message'] = 'Swal.fire({icon:"success",title:"تم بنجاح!",text:"تم إرسال رسالتك بنجاح! سنتواصل معك قريباً.",confirmButtonColor:"#D2AA5A"}).then(function(){document.querySelector("#contact form").reset();});';
                 } else {
-                    echo '<script>Swal.fire({icon:"error",title:"فشل",text:"فشل إرسال الرسالة. يرجى المحاولة مرة أخرى لاحقاً.",confirmButtonColor:"#D2AA5A"});</script>';
+                    $GLOBALS['swal_message'] = 'Swal.fire({icon:"error",title:"فشل",text:"فشل إرسال الرسالة. يرجى المحاولة مرة أخرى لاحقاً.",confirmButtonColor:"#D2AA5A"});';
                 }
             }
         }
@@ -1009,10 +1010,13 @@
         <?php
         if (isset($_GET['success'])) {
             if ($_GET['success'] == 1) {
-                echo '<script>Swal.fire({icon:"success",title:"تم بنجاح!",text:"تم إرسال طلبك بنجاح!",confirmButtonColor:"#D2AA5A"});</script>';
+                $swal_message = 'Swal.fire({icon:"success",title:"تم بنجاح!",text:"تم إرسال طلبك بنجاح!",confirmButtonColor:"#D2AA5A"});';
             } else {
-                echo '<script>Swal.fire({icon:"error",title:"فشل",text:"فشل إرسال البيانات. يرجى المحاولة مرة أخرى.",confirmButtonColor:"#D2AA5A"});</script>';
+                $swal_message = 'Swal.fire({icon:"error",title:"فشل",text:"فشل إرسال البيانات. يرجى المحاولة مرة أخرى.",confirmButtonColor:"#D2AA5A"});';
             }
+        }
+        if (!empty($swal_message)) {
+            echo '<script>document.addEventListener("DOMContentLoaded", function(){ ' . $swal_message . ' });</script>';
         }
         ?>
 
