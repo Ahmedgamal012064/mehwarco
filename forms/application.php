@@ -32,7 +32,7 @@ $context = stream_context_create($options);
 $verify_result = file_get_contents($verify_url, false, $context);
 $response_data = json_decode($verify_result);
 
-if (!$response_data->success) {
+if (!$response_data->success || $response_data->score < 0.5) {
     header('Location: ../index.php?success=0&error=captcha');
     exit;
 }

@@ -358,8 +358,8 @@
                             </div>
                             <div class="col-lg-12 text-center">
                                 <div id="success"></div>
-                                <div class="g-recaptcha" data-sitekey="6LfpX3gsAAAAAIuvlUFb6ffPKN-a4qV9BumbvHUP"></div>
-                                <input name="btn_submit_message" type="submit" class="btn btn-outline-light btn-xl text-uppercase">
+                                <input type="hidden" name="g-recaptcha-response" id="contact-recaptcha-response">
+                                <input name="btn_submit_message" type="submit" id="contact-submit-btn" class="btn btn-outline-light btn-xl text-uppercase">
                             </div>
                         </form>
                     </div>
@@ -606,9 +606,9 @@
                     </div> -->
 
                                 <div class="col-lg-6 col-md-12 col-sm-12 col-xs-12">
-                                    <div class="g-recaptcha" data-sitekey="6LfpX3gsAAAAAIuvlUFb6ffPKN-a4qV9BumbvHUP"></div>
+                                    <input type="hidden" name="g-recaptcha-response" id="join-recaptcha-response">
                                     <br />
-                                    <button type="submit" name="submit" class="btn btn-primary btn-block col-3" style="float: right;">Submit</button>
+                                    <button type="submit" name="submit" id="join-submit-btn" class="btn btn-primary btn-block col-3" style="float: right;">Submit</button>
                                 </div>
 
                             </div>
@@ -682,7 +682,7 @@
 
         <a id="back-to-top" href="#" class="btn btn-info btn-lg back-to-top" role="button" data-toggle="tooltip" data-placement="left"><span class="fa fa-arrow-up"></span></a>
 
-        <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+        <script src="https://www.google.com/recaptcha/api.js?render=6LfpX3gsAAAAAIuvlUFb6ffPKN-a4qV9BumbvHUP"></script>
         <script src="assets/jquery/jquery.min.js"></script>
         <script src="assets/bootstrap/js/bootstrap.bundle.min.js"></script>
 
@@ -834,6 +834,32 @@
             });
         </script>
 
+        <script>
+            // reCAPTCHA v3 for Contact Form
+            document.querySelector('#contact form').addEventListener('submit', function(e) {
+                e.preventDefault();
+                var form = this;
+                grecaptcha.ready(function() {
+                    grecaptcha.execute('6LfpX3gsAAAAAIuvlUFb6ffPKN-a4qV9BumbvHUP', {action: 'contact'}).then(function(token) {
+                        document.getElementById('contact-recaptcha-response').value = token;
+                        form.submit();
+                    });
+                });
+            });
+
+            // reCAPTCHA v3 for Join Us Form
+            document.getElementById('join-submit-btn').addEventListener('click', function(e) {
+                var form = document.getElementById('frm_join');
+                // Let existing validation run first via jQuery
+                // Token will be set before the form actually submits
+                grecaptcha.ready(function() {
+                    grecaptcha.execute('6LfpX3gsAAAAAIuvlUFb6ffPKN-a4qV9BumbvHUP', {action: 'join'}).then(function(token) {
+                        document.getElementById('join-recaptcha-response').value = token;
+                    });
+                });
+            });
+        </script>
+
         <?php
 
         if (isset($_POST['btn_submit_message'])) {
@@ -870,7 +896,7 @@
             $verify_result = file_get_contents($verify_url, false, $context);
             $response_data = json_decode($verify_result);
             
-            if (!$response_data->success) {
+            if (!$response_data->success || $response_data->score < 0.5) {
                 echo ("<SCRIPT LANGUAGE='JavaScript'> alert('reCAPTCHA verification failed. Please try again.'); </SCRIPT>");
                 return;
             }
@@ -879,10 +905,10 @@
             $strCom = '.com';
             $strNet = '.net';
 
-            $curl = "http://mehwarco.com/test.php";
+            $curl = "index.php#contact";
 
             if ($_POST['type'] == "1") {
-                $curl = "http://mehwarco.com/test_ar.php";
+                $curl = "index_ar.php#contact";
             }
 
             //echo "Alpha 1"; 
@@ -941,7 +967,7 @@
 
             ////echo "Beta 1";
             curl_setopt_array($curl, array(
-                CURLOPT_URL => "http://mehwarco.com/PHPMailer-master/examples/amazon-ses-smtp-sample.php",
+                CURLOPT_URL => (isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on' ? 'https' : 'http') . '://' . $_SERVER['HTTP_HOST'] . '/PHPMailer-master/examples/amazon-ses-smtp-sample.php',
                 CURLOPT_RETURNTRANSFER => true,
                 CURLOPT_ENCODING => "",
                 CURLOPT_MAXREDIRS => 10,
