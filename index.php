@@ -914,8 +914,8 @@
             $debug_log .= "reCAPTCHA passed. Score: " . $response_data->score . "\n";
 
             $strHttp = 'http:';
-            $strCom = '.com';
-            $strNet = '.net';
+            $strHttps = 'https:';
+            $strWww = 'www.';
 
             $curl = "index.php#contact";
 
@@ -928,8 +928,8 @@
             if (
                 preg_match("/{$strHttp}/i", strtolower($_POST['your-mobile'])) ||
                 preg_match("/{$strHttp}/i", strtolower($_POST['your-message'])) ||
-                preg_match("/{$strCom}/i", strtolower($_POST['your-message'])) ||
-                preg_match("/{$strNet}/i", strtolower($_POST['your-message'])) ||
+                preg_match("/{$strHttps}/i", strtolower($_POST['your-message'])) ||
+                preg_match("/{$strWww}/i", strtolower($_POST['your-message'])) ||
                 preg_match("/{$strHttp}/i", strtolower($_POST['your-name'])) ||
                 preg_match("/{$strHttp}/i", strtolower($_POST['your-email']))
             ) {
