@@ -610,6 +610,7 @@
 
                                 <div class="col-lg-6 col-md-12 col-sm-12 col-xs-12">
                                     <input type="hidden" name="g-recaptcha-response" id="join-recaptcha-response">
+                                    <input type="hidden" name="lang" value="en">
                                     <br />
                                     <button type="submit" name="submit" id="join-submit-btn" class="btn btn-primary btn-block col-3" style="float: right;">Submit</button>
                                 </div>

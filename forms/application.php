@@ -267,9 +267,39 @@ try {
     $stmt = $db->prepare($stmt_str);
     $stmt->execute(array());
 
-    // Send confirmation email to the applicant
+    // Send notification email to admin about new application
     $applicant_name = htmlspecialchars($_POST['full_name']);
     $applicant_email = $_POST['user_email'];
+    $admin_subject = "New Job Application from " . $applicant_name;
+    $admin_body = "<table border='2'>";
+    $admin_body .= "<tr><td>Name</td><td>" . $applicant_name . "</td></tr>";
+    $admin_body .= "<tr><td>Email</td><td>" . $applicant_email . "</td></tr>";
+    $admin_body .= "<tr><td>Job Title</td><td>" . htmlspecialchars($_POST['job']) . "</td></tr>";
+    $admin_body .= "<tr><td>Country</td><td>" . htmlspecialchars($_POST['country']) . "</td></tr>";
+    $admin_body .= "<tr><td>Mobile</td><td>" . htmlspecialchars($_POST['mobile']) . "</td></tr>";
+    $admin_body .= "<tr><td>Major</td><td>" . htmlspecialchars($_POST['major']) . "</td></tr>";
+    $admin_body .= "<tr><td>Experience</td><td>" . htmlspecialchars($_POST['experience']) . " years</td></tr>";
+    $admin_body .= "<tr><td>Hourly Rate (SAR)</td><td>" . htmlspecialchars($_POST['rate']) . "</td></tr>";
+    $admin_body .= "</table>";
+
+    $admin_mail_url = (isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on' ? 'https' : 'http') . '://' . $_SERVER['HTTP_HOST'] . '/PHPMailer-master/examples/amazon-ses-smtp-sample.php';
+    $admin_curl = curl_init();
+    curl_setopt_array($admin_curl, array(
+        CURLOPT_URL => $admin_mail_url,
+        CURLOPT_RETURNTRANSFER => true,
+        CURLOPT_TIMEOUT => 30,
+        CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
+        CURLOPT_CUSTOMREQUEST => "POST",
+        CURLOPT_POSTFIELDS => "------WebKitFormBoundary7MA4YWxkTrZu0gW\r\nContent-Disposition: form-data; name=\"email\"\r\n\r\ncontact@mehwarco.com\r\n------WebKitFormBoundary7MA4YWxkTrZu0gW\r\nContent-Disposition: form-data; name=\"subject\"\r\n\r\n" . $admin_subject . "\r\n------WebKitFormBoundary7MA4YWxkTrZu0gW\r\nContent-Disposition: form-data; name=\"content\"\r\n\r\n" . $admin_body . "\r\n------WebKitFormBoundary7MA4YWxkTrZu0gW--",
+        CURLOPT_HTTPHEADER => array(
+            "cache-control: no-cache",
+            "content-type: multipart/form-data; boundary=----WebKitFormBoundary7MA4YWxkTrZu0gW",
+        ),
+    ));
+    curl_exec($admin_curl);
+    curl_close($admin_curl);
+
+    // Send confirmation email to the applicant
     $confirmation_subject = "Thank you for applying to Mehwarco";
     $confirmation_body = "
     <div style='font-family:Arial,sans-serif;max-width:600px;margin:0 auto;padding:20px;'>
@@ -305,8 +335,13 @@ try {
     curl_exec($curl);
     curl_close($curl);
 
-    //redirect to index page
-    header('Location: ../index.php?success=1');
+    //redirect to success page
+    $lang = isset($_POST['lang']) ? $_POST['lang'] : 'en';
+    if ($lang === 'ar') {
+        header('Location: ../success_ar.php?type=join');
+    } else {
+        header('Location: ../success.php?type=join');
+    }
     exit;
 
 //else catch the exception and show the error.
@@ -314,7 +349,12 @@ try {
     //$error[] = 
     //echo $e->getMessage() . '\n';
     //echo $stmt_str . '\n';
-    header('Location: ../index.php?success=0');
+    $lang = isset($_POST['lang']) ? $_POST['lang'] : 'en';
+    if ($lang === 'ar') {
+        header('Location: ../index_ar.php?success=0');
+    } else {
+        header('Location: ../index.php?success=0');
+    }
     exit;
 }
 
