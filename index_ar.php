@@ -69,6 +69,14 @@
             color: #0b4932 !important;
             border-bottom: #FFFFFF !important;
         }
+
+        /* Fix Owl Carousel v1 RTL issue */
+        .owl-carousel {
+            direction: ltr;
+        }
+        .owl-carousel .owl-item {
+            direction: rtl;
+        }
     </style>
 </head>
 
