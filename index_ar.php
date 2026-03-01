@@ -352,6 +352,7 @@
                                 <div id="contact-message"></div>
                                 <input type="hidden" name="g-recaptcha-response" id="contact-recaptcha-response">
                                 <input type="hidden" name="type" value="1">
+                                <input type="hidden" name="form_submitted" value="1">
                                 <input name="btn_submit_message" type="submit" id="contact-submit-btn" class="btn btn-outline-light btn-xl text-uppercase">
                             </div>
                         </form>
@@ -872,7 +873,7 @@
         <?php
         $swal_message = '';
 
-        if (isset($_POST['btn_submit_message'])) {
+        if (isset($_POST['form_submitted'])) {
             sendForm();
         }
 
