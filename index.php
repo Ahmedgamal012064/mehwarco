@@ -359,6 +359,7 @@
                             <div class="col-lg-12 text-center">
                                 <div id="contact-message"></div>
                                 <input type="hidden" name="g-recaptcha-response" id="contact-recaptcha-response">
+                                <input type="hidden" name="type" value="0">
                                 <input name="btn_submit_message" type="submit" id="contact-submit-btn" class="btn btn-outline-light btn-xl text-uppercase">
                             </div>
                         </form>
@@ -977,7 +978,7 @@
                     </div>";
                     send_mail($_POST['your-email'], $confirmation_subject, $confirmation_body);
 
-                    echo '<script>window.location.href="success.php?type=contact";</script>';
+                    $GLOBALS['swal_message'] = 'window.location.href="success.php?type=contact";';
                     return;
                 } else {
                     $GLOBALS['swal_message'] = 'Swal.fire({icon:"error",title:"Failed",text:"Failed to send message. Please try again later.",confirmButtonColor:"#D2AA5A"});';
