@@ -54,10 +54,13 @@ $mail->Username = "AKIAYKIT5KFRNEVPVMG7";
 $mail->Password = "BFKmbY7mT0hhR1Zrbj27G6yekU2sAQ8TWyHOGKeGftlP";
 
 //Set who the message is to be sent from
-$mail->setFrom('contact@mehwarco.com');
+$mail->setFrom('contact@mehwarco.com', 'Mehwarco');
+$mail->addReplyTo('contact@mehwarco.com', 'Mehwarco');
 
-
-
+//Set proper email headers to avoid spam
+$mail->XMailer = 'Mehwarco Mailer';
+$mail->CharSet = 'UTF-8';
+$mail->Encoding = 'base64';
 
 //Set who the message is to be sent to
 $mail->addAddress($_POST['email'], '');
@@ -68,6 +71,9 @@ $mail->Subject = $_POST['subject'];
 //Read an HTML message body from an external file, convert referenced images to embedded,
 //convert HTML into a basic plain-text alternative body
 $mail->msgHTML($_POST['content']);
+
+//Set plain text alternative for better deliverability
+$mail->AltBody = strip_tags(str_replace(['<br>', '<br/>', '<br />', '</p>', '</h2>', '</h3>', '</h4>'], "\n", $_POST['content']));
 
 
 //send the message, check for errors
