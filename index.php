@@ -977,7 +977,8 @@
                     </div>";
                     send_mail($_POST['your-email'], $confirmation_subject, $confirmation_body);
 
-                    $GLOBALS['swal_message'] = 'Swal.fire({icon:"success",title:"Success!",text:"Your message has been sent successfully! We will get back to you soon.",confirmButtonColor:"#D2AA5A"}).then(function(){document.querySelector("#contact form").reset();});';
+                    echo '<script>window.location.href="success.php?type=contact";</script>';
+                    return;
                 } else {
                     $GLOBALS['swal_message'] = 'Swal.fire({icon:"error",title:"Failed",text:"Failed to send message. Please try again later.",confirmButtonColor:"#D2AA5A"});';
                 }

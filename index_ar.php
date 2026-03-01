@@ -975,7 +975,8 @@
                     </div>";
                     send_mail($_POST['your-email'], $confirmation_subject, $confirmation_body);
 
-                    $GLOBALS['swal_message'] = 'Swal.fire({icon:"success",title:"تم بنجاح!",text:"تم إرسال رسالتك بنجاح! سنتواصل معك قريباً.",confirmButtonColor:"#D2AA5A"}).then(function(){document.querySelector("#contact form").reset();});';
+                    echo '<script>window.location.href="success_ar.php?type=contact";</script>';
+                    return;
                 } else {
                     $GLOBALS['swal_message'] = 'Swal.fire({icon:"error",title:"فشل",text:"فشل إرسال الرسالة. يرجى المحاولة مرة أخرى لاحقاً.",confirmButtonColor:"#D2AA5A"});';
                 }
