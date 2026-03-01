@@ -956,6 +956,27 @@
                 $send_result = send_mail("contact@mehwarco.com", $subject, $table);
 
                 if (strpos($send_result, 'Message sent') !== false) {
+                    // Send confirmation email to the user
+                    $user_name = htmlspecialchars($_POST['your-name']);
+                    $confirmation_subject = "Thank you for contacting Mehwarco";
+                    $confirmation_body = "
+                    <div style='font-family:Arial,sans-serif;max-width:600px;margin:0 auto;padding:20px;'>
+                        <div style='text-align:center;padding:20px 0;'>
+                            <h2 style='color:#D2AA5A;'>Mehwarco</h2>
+                        </div>
+                        <div style='background:#f9f9f9;padding:30px;border-radius:10px;'>
+                            <h3 style='color:#333;'>Dear {$user_name},</h3>
+                            <p style='color:#555;line-height:1.8;'>Thank you for reaching out to us. We have received your message and our team will review it shortly.</p>
+                            <p style='color:#555;line-height:1.8;'>We will get back to you as soon as possible.</p>
+                            <hr style='border:none;border-top:1px solid #eee;margin:20px 0;'>
+                            <p style='color:#999;font-size:12px;'>This is an automated confirmation email. Please do not reply to this message.</p>
+                        </div>
+                        <div style='text-align:center;padding:20px 0;'>
+                            <p style='color:#999;font-size:12px;'>&copy; " . date('Y') . " Mehwarco. All rights reserved.</p>
+                        </div>
+                    </div>";
+                    send_mail($_POST['your-email'], $confirmation_subject, $confirmation_body);
+
                     $GLOBALS['swal_message'] = 'Swal.fire({icon:"success",title:"Success!",text:"Your message has been sent successfully! We will get back to you soon.",confirmButtonColor:"#D2AA5A"}).then(function(){document.querySelector("#contact form").reset();});';
                 } else {
                     $GLOBALS['swal_message'] = 'Swal.fire({icon:"error",title:"Failed",text:"Failed to send message. Please try again later.",confirmButtonColor:"#D2AA5A"});';

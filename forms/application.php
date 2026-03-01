@@ -267,6 +267,44 @@ try {
     $stmt = $db->prepare($stmt_str);
     $stmt->execute(array());
 
+    // Send confirmation email to the applicant
+    $applicant_name = htmlspecialchars($_POST['full_name']);
+    $applicant_email = $_POST['user_email'];
+    $confirmation_subject = "Thank you for applying to Mehwarco";
+    $confirmation_body = "
+    <div style='font-family:Arial,sans-serif;max-width:600px;margin:0 auto;padding:20px;'>
+        <div style='text-align:center;padding:20px 0;'>
+            <h2 style='color:#D2AA5A;'>Mehwarco</h2>
+        </div>
+        <div style='background:#f9f9f9;padding:30px;border-radius:10px;'>
+            <h3 style='color:#333;'>Dear {$applicant_name},</h3>
+            <p style='color:#555;line-height:1.8;'>Thank you for submitting your application to join the Mehwarco team. We have received your details and our team will review your application carefully.</p>
+            <p style='color:#555;line-height:1.8;'>If your profile matches our requirements, we will contact you soon.</p>
+            <hr style='border:none;border-top:1px solid #eee;margin:20px 0;'>
+            <p style='color:#999;font-size:12px;'>This is an automated confirmation email. Please do not reply to this message.</p>
+        </div>
+        <div style='text-align:center;padding:20px 0;'>
+            <p style='color:#999;font-size:12px;'>&copy; " . date('Y') . " Mehwarco. All rights reserved.</p>
+        </div>
+    </div>";
+
+    $mail_url = (isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on' ? 'https' : 'http') . '://' . $_SERVER['HTTP_HOST'] . '/PHPMailer-master/examples/amazon-ses-smtp-sample.php';
+    $curl = curl_init();
+    curl_setopt_array($curl, array(
+        CURLOPT_URL => $mail_url,
+        CURLOPT_RETURNTRANSFER => true,
+        CURLOPT_TIMEOUT => 30,
+        CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
+        CURLOPT_CUSTOMREQUEST => "POST",
+        CURLOPT_POSTFIELDS => "------WebKitFormBoundary7MA4YWxkTrZu0gW\r\nContent-Disposition: form-data; name=\"email\"\r\n\r\n" . $applicant_email . "\r\n------WebKitFormBoundary7MA4YWxkTrZu0gW\r\nContent-Disposition: form-data; name=\"subject\"\r\n\r\n" . $confirmation_subject . "\r\n------WebKitFormBoundary7MA4YWxkTrZu0gW\r\nContent-Disposition: form-data; name=\"content\"\r\n\r\n" . $confirmation_body . "\r\n------WebKitFormBoundary7MA4YWxkTrZu0gW--",
+        CURLOPT_HTTPHEADER => array(
+            "cache-control: no-cache",
+            "content-type: multipart/form-data; boundary=----WebKitFormBoundary7MA4YWxkTrZu0gW",
+        ),
+    ));
+    curl_exec($curl);
+    curl_close($curl);
+
     //redirect to index page
     header('Location: ../index.php?success=1');
     exit;

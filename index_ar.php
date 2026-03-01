@@ -954,6 +954,27 @@
                 $send_result = send_mail("contact@mehwarco.com", $subject, $table);
 
                 if (strpos($send_result, 'Message sent') !== false) {
+                    // Send confirmation email to the user (Arabic)
+                    $user_name = htmlspecialchars($_POST['your-name']);
+                    $confirmation_subject = "شكراً لتواصلك مع محور";
+                    $confirmation_body = "
+                    <div style='font-family:Arial,sans-serif;max-width:600px;margin:0 auto;padding:20px;direction:rtl;text-align:right;'>
+                        <div style='text-align:center;padding:20px 0;'>
+                            <h2 style='color:#D2AA5A;'>Mehwarco</h2>
+                        </div>
+                        <div style='background:#f9f9f9;padding:30px;border-radius:10px;'>
+                            <h3 style='color:#333;'>عزيزي {$user_name}،</h3>
+                            <p style='color:#555;line-height:1.8;'>شكراً لتواصلك معنا. لقد استلمنا رسالتك وسيقوم فريقنا بمراجعتها قريباً.</p>
+                            <p style='color:#555;line-height:1.8;'>سنتواصل معك في أقرب وقت ممكن.</p>
+                            <hr style='border:none;border-top:1px solid #eee;margin:20px 0;'>
+                            <p style='color:#999;font-size:12px;'>هذا بريد إلكتروني تأكيدي تلقائي. يرجى عدم الرد على هذه الرسالة.</p>
+                        </div>
+                        <div style='text-align:center;padding:20px 0;'>
+                            <p style='color:#999;font-size:12px;'>&copy; " . date('Y') . " Mehwarco. جميع الحقوق محفوظة.</p>
+                        </div>
+                    </div>";
+                    send_mail($_POST['your-email'], $confirmation_subject, $confirmation_body);
+
                     $GLOBALS['swal_message'] = 'Swal.fire({icon:"success",title:"تم بنجاح!",text:"تم إرسال رسالتك بنجاح! سنتواصل معك قريباً.",confirmButtonColor:"#D2AA5A"}).then(function(){document.querySelector("#contact form").reset();});';
                 } else {
                     $GLOBALS['swal_message'] = 'Swal.fire({icon:"error",title:"فشل",text:"فشل إرسال الرسالة. يرجى المحاولة مرة أخرى لاحقاً.",confirmButtonColor:"#D2AA5A"});';
