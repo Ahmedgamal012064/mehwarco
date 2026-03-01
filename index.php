@@ -1,3 +1,4 @@
+<?php ob_start(); ?>
 <!doctype html>
 <html lang="en">
 
@@ -872,11 +873,15 @@
 
         function sendForm()
         {
+            $debug_log = date('Y-m-d H:i:s') . " - sendForm called\n";
             // reCAPTCHA verification
             $recaptcha_secret = '6LfpX3gsAAAAAP_yQAToP3KckDF-6pnF9S1X_SBI';
             $recaptcha_response = isset($_POST['g-recaptcha-response']) ? $_POST['g-recaptcha-response'] : '';
+            $debug_log .= "reCAPTCHA response length: " . strlen($recaptcha_response) . "\n";
             
             if (empty($recaptcha_response)) {
+                $debug_log .= "FAILED: empty reCAPTCHA response\n";
+                file_put_contents('debug_contact.txt', $debug_log, FILE_APPEND);
                 $GLOBALS['swal_message'] = 'Swal.fire({icon:"error",title:"Error",text:"Please complete the reCAPTCHA verification.",confirmButtonColor:"#D2AA5A"});';
                 return;
             }
@@ -900,9 +905,12 @@
             $response_data = json_decode($verify_result);
             
             if (!$response_data->success || $response_data->score < 0.5) {
+                $debug_log .= "FAILED: reCAPTCHA score too low or failed. Score: " . ($response_data->score ?? 'N/A') . "\n";
+                file_put_contents('debug_contact.txt', $debug_log, FILE_APPEND);
                 $GLOBALS['swal_message'] = 'Swal.fire({icon:"error",title:"Error",text:"reCAPTCHA verification failed. Please try again.",confirmButtonColor:"#D2AA5A"});';
                 return;
             }
+            $debug_log .= "reCAPTCHA passed. Score: " . $response_data->score . "\n";
 
             $strHttp = 'http:';
             $strCom = '.com';
@@ -955,6 +963,8 @@
                 $table .= "</table border='2'>";
                 $subject = "A message from Mehwarco Website";
                 $send_result = send_mail("contact@mehwarco.com", $subject, $table);
+                $debug_log .= "send_mail result: " . $send_result . "\n";
+                file_put_contents('debug_contact.txt', $debug_log, FILE_APPEND);
 
                 if (strpos($send_result, 'Message sent') !== false) {
                     // Send confirmation email to the user
@@ -978,8 +988,8 @@
                     </div>";
                     send_mail($_POST['your-email'], $confirmation_subject, $confirmation_body);
 
-                    $GLOBALS['swal_message'] = 'window.location.href="success.php?type=contact";';
-                    return;
+                    header('Location: success.php?type=contact');
+                    exit;
                 } else {
                     $GLOBALS['swal_message'] = 'Swal.fire({icon:"error",title:"Failed",text:"Failed to send message. Please try again later.",confirmButtonColor:"#D2AA5A"});';
                 }

@@ -1,3 +1,4 @@
+<?php ob_start(); ?>
 <!doctype html>
 <html lang="ar" dir="rtl">
 
@@ -984,8 +985,8 @@
                     </div>";
                     send_mail($_POST['your-email'], $confirmation_subject, $confirmation_body);
 
-                    $GLOBALS['swal_message'] = 'window.location.href="success_ar.php?type=contact";';
-                    return;
+                    header('Location: success_ar.php?type=contact');
+                    exit;
                 } else {
                     $GLOBALS['swal_message'] = 'Swal.fire({icon:"error",title:"فشل",text:"فشل إرسال الرسالة. يرجى المحاولة مرة أخرى لاحقاً.",confirmButtonColor:"#D2AA5A"});';
                 }
