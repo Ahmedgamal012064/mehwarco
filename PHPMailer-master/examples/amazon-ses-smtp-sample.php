@@ -9,6 +9,12 @@ date_default_timezone_set('Asia/Riyadh');
 
 require '../PHPMailerAutoload.php';
 
+// Validate required POST data
+if (empty($_POST['email']) || empty($_POST['subject']) || empty($_POST['content'])) {
+    echo "Error: Missing required fields (email, subject, content).";
+    return "Error: Missing required fields.";
+}
+
 //Create a new PHPMailer instance
 $mail = new PHPMailer;
 
@@ -42,10 +48,10 @@ $mail->SMTPAuth = true;
  
 
 //Username to use for SMTP authentication - use full email address for gmail - from iAM users
-$mail->Username = "AKIAYKIT5KFRKYIEPRNE";
+$mail->Username = "AKIAYKIT5KFRNEVPVMG7";
 
 //Password to use for SMTP authentication
-$mail->Password = "BNgtNO2ScxdxsuW5hHF6S20dVE4QUL/alZzSKIWtvCDj";
+$mail->Password = "BFKmbY7mT0hhR1Zrbj27G6yekU2sAQ8TWyHOGKeGftlP";
 
 //Set who the message is to be sent from
 $mail->setFrom('contact@mehwarco.com');
@@ -66,10 +72,10 @@ $mail->msgHTML($_POST['content']);
 
 //send the message, check for errors
 if (!$mail->send()) {
-    echo "Mailer Error: " . $mail->ErrorInfo;
-    return "Mailer Error: " . $mail->ErrorInfo;
+    $result = "Mailer Error: " . $mail->ErrorInfo;
 } else {
-    echo "Message sent!";
-    return "Message sent!";
+    $result = "Message sent!";
 }
+echo $result;
+return $result;
 
